@@ -1,11 +1,11 @@
 <?php
 
 
-class Model_cctv extends CI_Model{
+class Model_terminal extends CI_Model{
 
     public function tampil_data()
     {
-        return $this->db->get('data_cctv');
+        return $this->db->get('data_terminal');
     }
 
     public function tambah_data($data,$table)

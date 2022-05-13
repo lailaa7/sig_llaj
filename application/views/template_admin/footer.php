@@ -44,8 +44,16 @@
 
       <script src="<?php echo base_url() ?>assets/admin./js/dashboard/dashboard-1.js"></script>
 
+      <!-- leaflet -->
       <script src="<?= base_url() ?>assets/admin/leaflet/plugins/leaflet/leaflet.js"></script>
       <script src="<?= base_url() ?>assets/admin/leaflet/pages/jquery.leaflet-map.init.js"></script>
+
+      <!-- datable -->
+      <script src="<?= base_url() ?>assets/admin/./plugins/tables/js/jquery.dataTables.min.js"></script>
+      <script src="<?= base_url() ?>assets/admin/./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+      <script src="<?= base_url() ?>assets/admin/./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
+
+      <script src="https://kit.fontawesome.com/9628c2592e.js" crossorigin="anonymous"></script>
       </body>
 
       </html>

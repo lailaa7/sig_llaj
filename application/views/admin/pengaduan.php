@@ -13,8 +13,8 @@
                                 <th>No Telephon</th>
                                 <th>Lokasi</th>
                                 <th>Detail Pengaduan</th>
-                                <th>Bukti</th>
-                                <th>Aksi</th>
+                                <!-- <th>Bukti</th> -->
+                                <th colspan="3">Aksi</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -25,10 +25,19 @@
                                     <td><?php echo $aduan->no_telp ?></td>
                                     <td><?php echo $aduan->lokasi ?></td>
                                     <td><?php echo $aduan->isi ?></td>
-                                    <td><?php echo $aduan->bukti ?></td>
-                                    <td>
+                                    <!-- <td><?php echo $aduan->bukti ?></td> -->
+                                    <td><div>
+                                        <?php echo anchor(
+                                            'admin/cctv_admin/edit_cctv/' . $aduan->id_pengaduan,
+                                            '<div class="btn btn-success btn-small"><i class="fa-solid fa-screwdriver-wrench"></i></div>'
+                                        ) ?>
+                    
+                                        <?php echo anchor(
+                                            'admin/pengaduan/proses/' . $aduan->id_pengaduan,
+                                            '<div class="btn btn-primary btn-small"><i class="fa-solid fa-circle-info"></i></i></div>'
+                                        ) ?>
 
-                                    </td>
+                                    </div></td>
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>

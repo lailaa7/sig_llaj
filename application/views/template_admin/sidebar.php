@@ -40,8 +40,8 @@
                         </a>
                         <ul aria-expanded="false">
                             <li><a href="<?php echo base_url('admin/cctv_admin')?>">CCTV</a></li>
-                            <li><a href="<?php echo base_url('admin/parkir_admin')?>">Parkir</a></li>
-                            <li><a href="<?php echo base_url('admin/hatle_admin')?>">Halte</a></li>
+                            <li><a href="<?php echo base_url('admin/parkir_admin')?>">Parkir Khusus</a></li>
+                            <li><a href="<?php echo base_url('admin/halte_admin')?>">Halte</a></li>
                             <li><a href="<?php echo base_url('admin/stasiun_admin')?>">Stasiun</a></li>
                             <li><a href="<?php echo base_url('admin/terminal_admin')?>">Terminal</a></li>
                         </ul>

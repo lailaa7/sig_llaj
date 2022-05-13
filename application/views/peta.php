@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col-lg-12">
+        <div class="col-lg-12 mt-3 mb-3">
             <div class="card">
                 <div class="card-header">
                     <!-- <h4 class="card-title">Leaflet Quick Start Guide</h4>

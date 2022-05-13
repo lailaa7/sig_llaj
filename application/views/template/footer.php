@@ -95,10 +95,15 @@
 <script src="<?php echo base_url() ?>assets/template/js/script.js"></script>
 <script src="<?php echo base_url() ?>assets/template/js/contact.js"></script>
 
-
+<!-- leaflet -->
 <script src="<?= base_url() ?>assets/leaflet/plugins/leaflet/leaflet.js"></script>
 <script src="<?= site_url() ?>peta/map_data"></script>
 <script src="<?= base_url() ?>assets/leaflet/pages/jquery.leaflet-map.init.js"></script>
+
+<!-- datable -->
+<script src="<?= base_url() ?>assets/admin/./plugins/tables/js/jquery.dataTables.min.js"></script>
+<script src="<?= base_url() ?>assets/admin/./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
+<script src="<?= base_url() ?>assets/admin/./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
 
 </body>
 

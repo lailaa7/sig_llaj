@@ -1,14 +1,14 @@
 <?php
 
-class Cctv_admin extends CI_Controller
+class Terminal_admin extends CI_Controller
 {
 
     public function index()
     {
-        $data['data_cctv'] = $this->model_cctv->tampil_data()->result();
+        $data['data_terminal'] = $this->model_terminal->tampil_data()->result();
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
-        $this->load->view('admin/cctv_admin', $data);
+        $this->load->view('admin/terminal_admin', $data);
         $this->load->view('template_admin/footer');
     }
 

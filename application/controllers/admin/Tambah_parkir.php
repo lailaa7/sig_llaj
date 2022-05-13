@@ -1,13 +1,13 @@
 <?php
 
-class Tambah_cctv extends CI_Controller
+class Tambah_parkir extends CI_Controller
 {
 
     public function index()
     {
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
-        $this->load->view('admin/tambah_cctv');
+        $this->load->view('admin/tambah_parkir');
         $this->load->view('template_admin/footer');
     }
 
@@ -20,25 +20,13 @@ class Tambah_cctv extends CI_Controller
             array('required' => '%s tidak boleh kosong')
         );
         $this->form_validation->set_rules(
-            'lokasi',
-            '',
-            'required',
-            array('required' => 'Tidak boleh kosong')
-        );
-        $this->form_validation->set_rules(
-            'jumlah',
-            'Jumlah',
-            'required',
-            array('required' => '%s tidak boleh kosong')
-        );
-        $this->form_validation->set_rules(
             'kondisi',
-            'Kondisi',
+            'kondisi',
             'required',
             array('required' => '%s tidak boleh kosong')
         );
         $this->form_validation->set_rules(
-            'latitude',
+            'latitute',
             'latitude',
             'required',
             array('required' => '%s tidak boleh kosong')
@@ -49,24 +37,23 @@ class Tambah_cctv extends CI_Controller
             'required',
             array('required' => '%s tidak boleh kosong')
         );
+
+
 
         if ($this->form_validation->run() == false) {
             $this->load->view('template_admin/header');
             $this->load->view('template_admin/sidebar');
-            $this->load->view('admin/tambah_cctv');
+            $this->load->view('admin/tambah_parkir');
             $this->load->view('template_admin/footer');
         } else {
             $data = array(
                 'nama_jalan'        =>  $this->input->post('nama_jalan'),
-                'lokasi'           =>  $this->input->post('lokasi'),
-                'jumlah'           =>  $this->input->post('jumlah'),
                 'kondisi'           =>  $this->input->post('kondisi'),
-                'latitude'           =>  $this->input->post('latitude'),
+                'latitude'           => $this->input->post('latitude'),
                 'longitude'           =>  $this->input->post('longitude')
             );
-
-            $this->model_cctv->tambah_data($data, 'data_cctv');
-            redirect('admin/cctv_admin');
+            $this->model_parkir->tambah_data($data, 'data_parkir');
+            redirect('admin/parkir_admin');
         }
     }
 }

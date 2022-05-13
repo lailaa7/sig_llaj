@@ -1,11 +1,11 @@
 <?php
 
 
-class Model_cctv extends CI_Model{
+class Model_parkir extends CI_Model{
 
     public function tampil_data()
     {
-        return $this->db->get('data_cctv');
+        return $this->db->get('data_parkir');
     }
 
     public function tambah_data($data,$table)
@@ -17,10 +17,6 @@ class Model_cctv extends CI_Model{
     {
         return $this->db->get_where($table,$where);
     }
-
-    public function detail_data($id = NULL)
-    {
-        $query = $this->db->get_where('data_cctv', array('id_cctv' => $id))->row();
-        return $query;
-    }
 }
+
+?>

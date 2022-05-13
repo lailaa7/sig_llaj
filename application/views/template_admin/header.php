@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
+    <script src="https://kit.fontawesome.com/9628c2592e.js" crossorigin="anonymous"></script>
     <title>Admin - SI LLAJ</title>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicon.png">
@@ -15,8 +16,12 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/admin/plugins/chartist-plugin-tooltips/css/chartist-plugin-tooltip.css">
     <!-- Custom Stylesheet -->
     <link href="<?php echo base_url() ?>assets/admin/css/style.css" rel="stylesheet">
-
+    <!-- datable -->
+    <link href="<?= base_url() ?>assets/admin/./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <!-- leaflet -->
     <link href="<?= base_url() ?>assets/admin/leaflet/plugins/leaflet/leaflet.css" rel="stylesheet">
+
+
 
 
 </head>

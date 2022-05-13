@@ -22,7 +22,12 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/template/css/style.css">
 
+    <!-- leaflet -->
     <link href="<?= base_url() ?>assets/leaflet/plugins/leaflet/leaflet.css" rel="stylesheet">
+    <!-- datable -->
+    <link href="<?= base_url() ?>assets/admin/./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/9628c2592e.js" crossorigin="anonymous"></script>
 
 </head>
 
