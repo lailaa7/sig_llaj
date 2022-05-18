@@ -10,4 +10,6 @@ class No_tiket extends CI_Controller
         $this->load->view('no_tiket');
         // $this->load->view('template/footer');
     }
+
+    
 }

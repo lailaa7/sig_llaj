@@ -11,7 +11,7 @@
                                 <tr>
                                     <th>Lokasi</th>
                                     <th>Nama Jalan</th>
-                                    <th>Jumlah</th>
+                                    <th>Jumlah</th> 
                                     <th>Kondisi</th>
                                     <th>Aksi</th>
                                 </tr>

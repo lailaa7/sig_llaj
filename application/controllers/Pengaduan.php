@@ -83,8 +83,13 @@
                     }
                 }
 
-                
+                $tgl = str_replace('-', '', date('Y-m-d'));
+                $last = $this->db->get('pengaduan', 'no_tiket');
+                $angka = (int) substr($last, -4, 4);
+                $no_tiket = $tgl . $angka;
+
                 $data = array(
+                    'no_tiket'             => $no_tiket,
                     'nama_pengirim'        =>  $this->input->post('nama_pengirim'),
                     'no_telp'        =>  $this->input->post('no_telp'),
                     'lokasi'           =>  $this->input->post('lokasi'),

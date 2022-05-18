@@ -54,9 +54,9 @@
             </div>
             <div class="row">
                 <div class="col-lg-6 px-3">
-                    <div class="form-group " hidden>
+                    <div class="form-group ">
                         <label class="control-label txt-left">No Tiket</label>
-                        <input name="no_tiket" id="no_tiket" type="text" class="form-control">
+                        <input name="no_tiket" id="no_tiket" value="" type="text" class="form-control">
                     </div>
 
                 </div>

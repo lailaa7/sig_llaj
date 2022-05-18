@@ -12,7 +12,7 @@
                                 <th>Nama Pelapor</th>
                                 <th>No Telephon</th>
                                 <th>Lokasi</th>
-                                <th>Detail Pengaduan</th>
+                                <!-- <th>Detail Pengaduan</th> -->
                                 <!-- <th>Bukti</th> -->
                                 <th colspan="3">Aksi</th>
                             </tr>
@@ -24,16 +24,16 @@
                                     <td><?php echo $aduan->nama_pengirim ?></td>
                                     <td><?php echo $aduan->no_telp ?></td>
                                     <td><?php echo $aduan->lokasi ?></td>
-                                    <td><?php echo $aduan->isi ?></td>
+                                    <!-- <td><?php echo $aduan->isi ?></td> -->
                                     <!-- <td><?php echo $aduan->bukti ?></td> -->
                                     <td><div>
                                         <?php echo anchor(
-                                            'admin/cctv_admin/edit_cctv/' . $aduan->id_pengaduan,
+                                            'admin/cctv_admin/proses/' . $aduan->no_tiket,
                                             '<div class="btn btn-success btn-small"><i class="fa-solid fa-screwdriver-wrench"></i></div>'
                                         ) ?>
                     
                                         <?php echo anchor(
-                                            'admin/pengaduan/proses/' . $aduan->id_pengaduan,
+                                            'admin/pengaduan/detail/' . $aduan->no_tiket,
                                             '<div class="btn btn-primary btn-small"><i class="fa-solid fa-circle-info"></i></i></div>'
                                         ) ?>
 
@@ -41,7 +41,7 @@
                                 </tr>
                             <?php endforeach; ?>
                         </tbody>
-                    </table>
+                    </table> 
                 </div>
             </div>
         </div>
