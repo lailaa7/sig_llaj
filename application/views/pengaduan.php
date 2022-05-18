@@ -5,7 +5,7 @@
                 <div class="col-lg-6 px-3">
                     <div class="form-group">
                         <label class="control-label txt-left">Nama</label>
-                        <input name="nama_pengirim" id="name" type="text" class="form-control">
+                        <input name="nama_pengirim" id="name" type="text" class="form-control" value="<?php $data ?>">
                         <div class="text-danger">
                             <?php echo form_error('nama_pengirim'); ?>
                         </div>
@@ -51,17 +51,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-6 px-3">
-                    <div class="form-group ">
-                        <label class="control-label txt-left">No Tiket</label>
-                        <input name="no_tiket" id="no_tiket" value="" type="text" class="form-control">
-                    </div>
-
-                </div>
-                <input type="hidden" name="tanggal" value="<?php echo date("d-m-Y"); ?>">
-
             </div>
 
             <div class=" row">

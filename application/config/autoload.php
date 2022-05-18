@@ -89,7 +89,7 @@ $autoload['drivers'] = array();
 |
 |	$autoload['helper'] = array('url', 'file');
 */
-$autoload['helper'] = array('url', 'form');
+$autoload['helper'] = array('url', 'form',);
 
 /*
 | -------------------------------------------------------------------
@@ -134,6 +134,6 @@ $autoload['language'] = array();
 */
 $autoload['model'] = array(
     'model_cctv', 'model_peta', 'model_pengaduan',
-    'model_parkir', 'model_halte', 'model_stasiun', 
+    'model_parkir', 'model_halte', 'model_stasiun',
     'model_terminal'
 );

@@ -1,5 +1,7 @@
  <?php
 
+    use Carbon\Carbon;
+
     class Pengaduan extends CI_Controller
     {
 
@@ -62,7 +64,6 @@
             //     array('required' => '%s tidak boleh kosong')
             // );
 
-
             if ($this->form_validation->run() == false) {
                 $this->load->view('template/header');
                 $this->load->view('template/navbar');
@@ -84,10 +85,30 @@
                 }
 
                 $tgl = str_replace('-', '', date('Y-m-d'));
-                $last = $this->db->get('pengaduan', 'no_tiket');
-                $angka = (int) substr($last, 0, 4);
+                $last = $this->db->get('pengaduan')->result_array();
+                $terakhir = null;
+                foreach ($last as $ls) {
+                    $terakhir = $ls;
+                }
+                $angka = (int) substr($terakhir['no_tiket'], 8, 4);
                 $angka++;
-                $no_tiket = $tgl . $angka;
+                $first = Carbon::now()->startOfMonth()->format('d');
+                $today = Carbon::now()->format('d');
+                if ($first == $today) {
+
+                    $no_tiket = $tgl . 1;
+                } else {
+                    if (strlen($angka) == 1) {
+                        $no_tiket = $tgl . '000' . $angka;
+                    } elseif (strlen($angka) == 2) {
+                        $no_tiket = $tgl . '00' . $angka;
+                    } elseif (strlen($angka) == 3) {
+                        $no_tiket = $tgl . '0' . $angka;
+                    } elseif (strlen($angka) == 4) {
+                        $no_tiket = $tgl . $angka;
+                    }
+                }
+
 
                 $data = array(
                     'no_tiket'             => $no_tiket,
