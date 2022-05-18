@@ -85,7 +85,8 @@
 
                 $tgl = str_replace('-', '', date('Y-m-d'));
                 $last = $this->db->get('pengaduan', 'no_tiket');
-                $angka = (int) substr($last, -4, 4);
+                $angka = (int) substr($last, 0, 4);
+                $angka++;
                 $no_tiket = $tgl . $angka;
 
                 $data = array(
