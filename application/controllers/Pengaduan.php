@@ -13,24 +13,6 @@
             $this->load->view('template/footer');
         }
 
-        // public function notiket()
-        // {
-        //     $CI     = &get_instance();
-        //     $CI->load->database();
-        //     date_default_timezone_set('Asia/Jakarta');
-        //     $tgl_awal = date('Y-m');
-        //     $tgl = str_replace('-','', date('Y-m-d'));
-        //     $start = 0; 
-        //     if (date('Y-m') != $tgl_awal)
-        //     {
-        //         $count =10;
-        //         echo rand(10000, 90000) . $tgl. $count+1;
-        //     } else{
-        //         echo rand(10000, 90000) . $tgl. $start+1;
-        //     }
-
-        // }
-
         public function tambah_pengaduan()
         {
             $this->form_validation->set_rules(
@@ -73,8 +55,9 @@
                 $gambar         = $_FILES['bukti']['name'];
                 if ($gambar = '') {
                 } else {
-                    $config['upload_path'] = './Lampiran';
+                    $config['upload_path'] = './lampiran';
                     $config['allowed_types'] = 'jpg|jpeg|png';
+                    $config['file_name'] = 'L'.date('dmh');
 
                     $this->load->library('upload', $config);
                     if (!$this->upload->do_upload('bukti')) {
@@ -83,7 +66,7 @@
                         $gambar = $this->upload->data('file_name');
                     }
                 }
-
+                date_default_timezone_set("Asia/Jakarta");
                 $tgl = str_replace('-', '', date('Y-m-d'));
                 $last = $this->db->get('pengaduan')->result_array();
                 $terakhir = null;
@@ -95,8 +78,7 @@
                 $first = Carbon::now()->startOfMonth()->format('d');
                 $today = Carbon::now()->format('d');
                 if ($first == $today) {
-
-                    $no_tiket = $tgl . 1;
+                    $no_tiket = $tgl . '0001';
                 } else {
                     if (strlen($angka) == 1) {
                         $no_tiket = $tgl . '000' . $angka;

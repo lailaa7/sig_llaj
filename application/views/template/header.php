@@ -24,6 +24,7 @@
 
     <!-- leaflet -->
     <link href="<?= base_url() ?>assets/leaflet/plugins/leaflet/leaflet.css" rel="stylesheet">
+    
     <!-- datable -->
     <link href="<?= base_url() ?>assets/admin/./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
 

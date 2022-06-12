@@ -90,7 +90,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="header-right">
+                <!-- <div class="header-right">
                     <ul class="clearfix">
                         <li class="icons dropdown"><a href="javascript:void(0)" data-toggle="dropdown">
                                 <i class="mdi mdi-email-outline"></i>
@@ -245,7 +245,7 @@
                             </div>
                         </li>
                     </ul>
-                </div>
+                </div> -->
             </div>
         </div>
         <!--**********************************

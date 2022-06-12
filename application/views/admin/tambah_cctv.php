@@ -15,7 +15,6 @@
                                           <?php echo form_error('nama_jalan'); ?>
                                       </div>
                                   </div>
-
                               </div>
                               <div class="col-lg-6">
                                   <div class="form-group">
@@ -26,7 +25,6 @@
                                           <?php echo form_error('lokasi'); ?>
                                       </div>
                                   </div>
-
                               </div>
                               <div class="col-lg-6">
                                   <div class="form-group">

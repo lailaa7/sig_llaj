@@ -297,8 +297,8 @@
         </div>
     </div>
 </section> -->
-<section class="section testimonial-2 gray-bg">
-    <div class="container">
+<section class="section testimonial-2 ">
+    <div class="container gray-bg">
         <div class="row justify-content-center">
             <div class="col-lg-7">
                 <div class="section-title text-center">
@@ -310,7 +310,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="container gray-bg">
         <div class="row align-items-center">
             <div class="col-lg-12 testimonial-wrap-2">
                 <div class="testimonial-block style-2  gray-bg">

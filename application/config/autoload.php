@@ -135,5 +135,5 @@ $autoload['language'] = array();
 $autoload['model'] = array(
     'model_cctv', 'model_peta', 'model_pengaduan',
     'model_parkir', 'model_halte', 'model_stasiun',
-    'model_terminal'
+    'model_terminal', 'model_proses'
 );

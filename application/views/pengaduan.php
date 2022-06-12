@@ -35,9 +35,9 @@
                     <div class="form-group">
                         <label class="control-label txt-left">Lampiran</label>
                         <input name="bukti" id="bukti" type="file" class="form-control">
-                        <!-- <div class="text-danger">
+                        <div class="text-danger">
                             <?php echo form_error('bukti'); ?>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>

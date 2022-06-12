@@ -3,34 +3,44 @@
         <div class="col-lg-12 mt-3">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Data Pengaduan Masuk</h4>
+                    <h4 class="card-title">Proses Pengaduan</h4>
                     <div class="table-responsive">
                         <table class="table table-bordered verticle-middle zero-configuration">
                             <thead>
                                 <tr>
                                     <th>No Tiket</th>
-                                    <th>Nama</th>
-                                    <th>No Telepon</th>
-                                    <th>Lokasi</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php foreach ($pengaduan as $aduan) : ?>
+                                <?php foreach ($proses as $pro) : ?>
                                     <tr>
-                                        <td><?php echo $aduan['no_tiket']; ?> </td>
-                                        <td><?php echo $aduan['nama_pengirim']; ?></td>
-                                        <td><?php echo $aduan['no_telp']; ?></td>
-                                        <td><?php echo $aduan['lokasi']; ?></td>
+                                        <td><?php echo $pro['no_tiket']; ?> </td>
+                                        <td style="text-align:center;">
+
+                                            <?php
+                                            if ($pro['status'] == 1) {
+                                                echo '<span class="btn mb-1 btn-rounded btn-outline-primary">Diterima</span>';
+                                            } elseif ($pro['status'] == 2) {
+                                                echo  '<span class="btn mb-1 btn-rounded btn-outline-warning">Diproses</span>';
+                                            } elseif ($pro['status'] == 3) {
+                                                echo '<span class="btn mb-1 btn-rounded btn-outline-success">Selesai</span>';
+                                            } else {
+                                                echo '<span class="btn mb-1 btn-rounded btn-outline-danger">Ditolak</span>';
+                                            }
+
+                                            ?>
+                                        </td>
                                         <td>
                                             <div>
-                                                <!-- <button type="button" class="btn btn-circle btn-success btn-small" data-toggle="modal" data-target="#proses<?php echo $aduan['no_tiket']; ?>">
-                                                    <i class="fa-solid fa-screwdriver-wrench"></i></button> -->
+                                                <button type="button" class="btn btn-circle btn-success btn-small" data-toggle="modal" data-target="#proses<?php echo $pro['no_tiket']; ?>">
+                                                    <i class="fa-solid fa-screwdriver-wrench"></i></button>
 
-                                                <?php echo anchor(
-                                                    'admin/pengaduan/detail_pengaduan/' . $aduan['no_tiket'],
-                                                    '<div class="btn btn-circle btn-info btn-small"><i class="fas fa-info"></i></div>'
-                                                ) ?>
+                                                <!-- <?php echo anchor(
+                                                            'admin/pengaduan/detail/' . $pro['no_tiket'],
+                                                            '<div class="btn btn-circle btn-primary btn-small"><i class="fa-solid fa-circle-info"></i></i></div>'
+                                                        ) ?> -->
 
                                             </div>
                                         </td>
@@ -68,10 +78,10 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="row" hidden>
+                        <div class="row" >
                             <div class="col-lg-6 px-3">
                                 <div class="form-group">
-                                    <label class="control-label txt-left">No Tiket</label>
+                                    <label class="control-label txt-left"></label>
                                     <input name="no_tiket" id="no_tiket" type="text" class="form-control" value="<?php echo $aduan['no_tiket']; ?>">
                                 </div>
                             </div>
@@ -79,8 +89,8 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="cancel" class="btn btn-danger" data-dismiss="modal">Tidak</button>
-                        <button type="submit" class="btn btn-success">Proses</button>
+                        <button type="cancel" name="tolak" class="btn btn-danger" data-dismiss="modal">Tidak</button>
+                        <button type="submit" name="proses" class="btn btn-success">Proses</button>
                     </div>
                 </form>
             </div>

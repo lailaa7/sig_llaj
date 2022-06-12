@@ -12,16 +12,18 @@ class Pengaduan extends CI_Controller
         $this->load->view('template_admin/footer');
     }
 
-    public function konfirmasi()
+    public function detail_pengaduan($id)
     {
-        // $no = $this->db->get_where('pengaduan', array('no_tiket' => $this->input->post('no_tiket')))->row();
+        $this->load->model('model_pengaduan');
+        $data['detail'] = $this->model_pengaduan->detail_data($id);
+        $this->load->view('template_admin/header');
+        $this->load->view('template_admin/sidebar');
+        $this->load->view('admin/detail_pengaduan', $data);
+        $this->load->view('template_admin/footer');
+    }
 
-        // var_dump($no);
-        // die;
-        // $this->db->order_by('no_tiket', 'DSC');
-        // return $this->db->from('pengaduan')
-        //     ->join('no_tiket', 'no_tiket.no_tiket=pengaduan.proses_pengaduan');
-
+    public function konfirmasi_proses()
+    {
         $data = array(
             'no_tiket' => $this->input->post('no_tiket'),
             'status' =>  '1',
