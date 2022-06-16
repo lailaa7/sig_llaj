@@ -6,7 +6,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" action="<?php echo base_url('admin/pengaduan/konfirmasi'); ?>">
+                                <form method="POST" id="form_proses" action="<?php echo base_url('admin/pengaduan/konfirmasi'); ?>">
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">No Tiket</label>
                                         <div class="col-sm-9">
@@ -16,7 +16,7 @@
                                     <div class="form-group row">
                                         <label class="col-sm-3 col-form-label">Nama Pelapor</label>
                                         <div class="col-sm-9">
-                                            <input type="text" class="form-control-plaintext" value="<?php echo $detail->nama_pengirim ?>">
+                                            <input type="text" class="form-control-plaintext" name="nama_pengirim" value="<?php echo $detail->nama_pengirim ?>">
                                         </div>
                                     </div>
                                     <div class="form-group row">
@@ -37,12 +37,13 @@
                                             <img src="<?php echo base_url() . './lampiran/' . $detail->bukti ?> " height="300" width="270">
                                         </div>
                                     </div>
+                                    <input type="text" id="type_proses" name="type_proses" hidden>
                                     <div align="right">
-                                        <button type="submit" class="btn mb-1 btn-rounded btn-success">Proses<span class="btn-icon-right">
+                                        <button type="button" onclick="SubmitForm(1)" name="proses" id="proses" class="btn mb-1 btn-rounded btn-success">Proses<span class="btn-icon-right">
                                                 <i class="fa fa-check"></i></span>
-                                        </button> 
+                                        </button>
 
-                                        <button type="cancel" name="tidak" class="btn mb-1 btn-rounded btn-danger">Tolak<span class="btn-icon-right"><i class="fa fa-close"></i></span>
+                                        <button type="button" onclick="SubmitForm(2)" name="tolak" id="tolak" class="btn mb-1 btn-rounded btn-danger">Tolak<span class="btn-icon-right"><i class="fa fa-close"></i></span>
                                         </button>
                                     </div>
                                 </form>
@@ -55,3 +56,15 @@
         </div>
     </div>
 </div>
+<script>
+    function SubmitForm(id) {
+        console.log(id)
+        $('#type_proses').val(id)
+        document.getElementById("form_proses").submit();
+
+    }
+    // document.getElementById("form_proses").addEventListener("click", function(event) {
+    //     event.preventDefault();
+    //     console.log('tes');
+    // });
+</script>

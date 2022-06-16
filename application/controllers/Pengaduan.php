@@ -56,8 +56,8 @@
                 if ($gambar = '') {
                 } else {
                     $config['upload_path'] = './lampiran';
-                    $config['allowed_types'] = 'jpg|jpeg|png';
-                    $config['file_name'] = 'L'.date('dmh');
+                    $config['allowed_types'] = 'jpg|png';
+                    $config['file_name'] = 'L' . date('dmh');
 
                     $this->load->library('upload', $config);
                     if (!$this->upload->do_upload('bukti')) {
@@ -99,10 +99,21 @@
                     'lokasi'           =>  $this->input->post('lokasi'),
                     'isi'           => $this->input->post('isi'),
                     'bukti'           =>  $gambar,
+                    'status'        => '1',
                     'tgl_pengaduan'  => date('d-m-y H:i:s')
                 );
                 $this->model_pengaduan->tambah_data($data, 'pengaduan');
                 redirect('no_tiket');
             }
+        }
+        public function DetailPengaduan()
+        {
+            # code...
+            $data['pengaduan'] = $this->db->get_where('proses_pengaduan', array('no_tiket' => $this->input->post('no_tiket')))->row();
+
+            $this->load->view('template/header');
+            $this->load->view('template/navbar');
+            $this->load->view('lacak', $data);
+            $this->load->view('template/footer');
         }
     }

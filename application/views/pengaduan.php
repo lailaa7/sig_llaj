@@ -61,12 +61,12 @@
         </form>
     </div>
     <div class=" mb-3 mt-5 px-3 py-2">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="<?= base_url('pengaduan/DetailPengaduan') ?>" method="POST" enctype="multipart/form-data">
             <div class="row">
                 <div class="col-lg-6 px-3 mr-auto ml-auto text-center">
                     <div class="form-group">
                         <h2 class="control-label title-color">Lacak Pengaduan Disini</h2>
-                        <input name="no_tiket2" id="no_tiket2" type="text" class="form-control">
+                        <input name="no_tiket" id="no_tiket" type="text" class="form-control">
                     </div>
                 </div>
                 <div class="col-lg-12 text-center">

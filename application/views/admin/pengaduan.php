@@ -10,8 +10,8 @@
                                 <tr>
                                     <th>No Tiket</th>
                                     <th>Nama</th>
-                                    <th>No Telepon</th>
                                     <th>Lokasi</th>
+                                    <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -20,8 +20,23 @@
                                     <tr>
                                         <td><?php echo $aduan['no_tiket']; ?> </td>
                                         <td><?php echo $aduan['nama_pengirim']; ?></td>
-                                        <td><?php echo $aduan['no_telp']; ?></td>
                                         <td><?php echo $aduan['lokasi']; ?></td>
+                                        <td>
+
+                                            <?php
+                                            if ($aduan['status'] == 1) {
+                                                echo '<span class="label label-pill label-primary">Diterima</span>';
+                                            } elseif ($aduan['status'] == 2) {
+                                                echo  '<span class="label label-pill label-warning">Diproses</span>';
+                                            } elseif ($aduan['status'] == 3) {
+                                                echo '<span class="label label-pill label-danger">Ditolak</span>';
+                                            } else {
+                                                echo '<span class="label label-pill label-success">Selesai</span>';
+                                            }
+
+                                            ?>
+                                        </td>
+
                                         <td>
                                             <div>
                                                 <!-- <button type="button" class="btn btn-circle btn-success btn-small" data-toggle="modal" data-target="#proses<?php echo $aduan['no_tiket']; ?>">
