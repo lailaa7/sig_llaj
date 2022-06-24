@@ -61,7 +61,7 @@ class Proses_pengaduan extends CI_Controller
             );
 
             $this->model_proses->update_data($where, $data, 'proses_pengaduan');
-            redirect('admin/proses_pengaduan/proses/' . $this->input->post('no_tiket'));
+            redirect('admin/proses_pengaduan/index/' . $this->input->post('no_tiket'));
         }
     }
 
@@ -91,7 +91,7 @@ class Proses_pengaduan extends CI_Controller
             );
 
             $this->model_proses->update_data($where, $data, 'proses_pengaduan');
-            redirect('admin/proses_pengaduan/proses/' . $this->input->post('no_tiket'));
+            redirect('admin/proses_pengaduan/index/' . $this->input->post('no_tiket'));
         }
     }
 
@@ -121,7 +121,7 @@ class Proses_pengaduan extends CI_Controller
             );
 
             $this->model_proses->update_data($where, $data, 'proses_pengaduan');
-            redirect('admin/proses_pengaduan/proses/' . $this->input->post('no_tiket'));
+            redirect('admin/proses_pengaduan/index/' . $this->input->post('no_tiket'));
         }
     }
 }

@@ -47,7 +47,7 @@
                             <p>Halaman Khusus Admin</p>
                         </div>
 
-                        <a href="appoinment.html" class="btn btn-main btn-round-full">Selengkapnya</a>
+                        <a href="<?php echo base_url('auth/login') ?>" class="btn btn-main btn-round-full">Selengkapnya</a>
                     </div>
                 </div>
             </div>

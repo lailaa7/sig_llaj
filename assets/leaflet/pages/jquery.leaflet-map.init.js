@@ -28,8 +28,7 @@ $(function(){
 	}
 
 
-	L.marker([-7.632936, 111.509327]).addTo(mymap)
-		.bindPopup("Dinas Perhubungan Kota Madiun.");
+	 
 
 	
 

@@ -35,7 +35,13 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Keterangan</label>
-                                    <input type="text" name="ket1" class="form-control" value="<?php echo $tambah->ket1 ?>">
+                                    <?php if ($tambah->proses1 == null) : ?>
+                                        <input type="text" name="ket1" class="form-control" value="">
+
+                                    <?php else : ?>
+                                        <input type="text" class="form-control" value="Selesai" disabled>
+                                    <?php endif; ?>
+                                    <!-- <input type="text" name="ket1" class="form-control" value="<?php echo $tambah->ket1 ?>"> -->
 
                                 </div>
                             </div>
@@ -44,31 +50,48 @@
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Proses 2</label>
-                                    <input type="file" name="proses2" class="form-control" value="">
+                                    <?php if ($tambah->proses2 == null) : ?>
+                                        <input type="file" name="proses2" class="form-control" value="">
+                                    <?php else : ?>
+                                        <input type="text" class="form-control" value="Selesai" disabled>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Keterangan</label>
-                                    <input type="text" name="ket2" class="form-control" value="<?php echo $tambah->ket2 ?>">
+                                    <?php if ($tambah->proses2 == null) : ?>
+                                        <input type="text" name="ket2" class="form-control" value="">
 
-                                </div>
+                                    <?php else : ?>
+                                        <input type="text" class="form-control" value="Selesai" disabled>
+                                    <?php endif; ?>
+
+                                </div> 
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Proses 3</label>
-                                    <input type="file" name="proses3" class="form-control" value="">
+                                    <?php if ($tambah->proses3 == null) : ?>
+                                        <input type="file" name="proses3" class="form-control" value="">
+                                    <?php else : ?>
+                                        <input type="text" class="form-control" value="Selesai" disabled>
+                                    <?php endif; ?>
                                 </div>
                             </div>
 
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Keterangan</label>
-                                    <input type="text" name="ket3" class="form-control" value="<?php echo $tambah->ket3 ?>">
+                                    <?php if ($tambah->proses3 == null) : ?>
+                                        <input type="text" name="ket3" class="form-control" value="">
 
+                                    <?php else : ?>
+                                        <input type="text" class="form-control" value="Selesai" disabled>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                         </div>

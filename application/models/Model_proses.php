@@ -23,7 +23,7 @@ class Model_proses extends CI_Model
         $this->db->where($where);
         $query = $this->db->update($table, $data);
         return $query;
-    }
+    } 
     public function detail_data($id)
     {
         $query = $this->db->get_where('proses_pengaduan', array('no_tiket' => $id))->row();

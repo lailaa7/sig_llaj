@@ -449,26 +449,7 @@
                     </div>
                 </div>
             </div> -->
-            <div class="col-xl-6 col-lg-12 col-sm-12 col-xxl-12">
-                <div class="card">
-                    <div class="card-header">
-                        <!-- <h4 class="card-title">Leaflet Quick Start Guide</h4>
-                    <p class="text-muted mb-0">Example of Leaflet map.</p> -->
-                        <!--end card-header-->
-                        <div class="card-body">
-                            <div id="Leaf_default" class="" style="height: 400px"></div>
-                        </div>
-                        <!--end card-body-->
-                    </div>
-                    <!--end card-->
-                </div> <!-- end col -->
-                <!-- <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title mb-0">Store Location</h4>
-                        <div id="world-map" style="height: 470px;"></div>
-                    </div>
-                </div> -->
-            </div>
+             
         </div>
 
 

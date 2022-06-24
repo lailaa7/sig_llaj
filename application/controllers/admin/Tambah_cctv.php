@@ -56,18 +56,26 @@ class Tambah_cctv extends CI_Controller
             $this->load->view('admin/tambah_cctv');
             $this->load->view('template_admin/footer');
         } else {
+            //membuat cek ke database
+            $cek = $this->db->query("SELECT id_cctv FROM data_cctv ORDER BY id_cctv 
+            DESC limit 1");
+            $jumlah = $cek->num_rows();
+            foreach ($cek->result() as $ck) {
+                $id = $ck->id_cctv;
+            }
 
-            $ci = get_instance();
-            $query = "SELECT max(id_cctv) as maxKode FROM data_cctv";
-            $halte = $ci->db->query($query)->row_array();
-            $kode = $halte['maxKode'];
-            $noUrut = (int) substr($kode, 6);
-            $noUrut++;
-            $kodeBaru = "CCTV" . " - " . sprintf("%02s", $noUrut);
+            //kondisi jika kode lebih dari 0 dan kurang dari 1
+            if ($jumlah <> 0) {
+                $kode = intval($id) + 1;
+            } else {
+                $kode = 1;
+            }
 
+            //hasil kode
+            $kodemax = 'CCTV' . str_pad($kode, 3, "0", STR_PAD_LEFT);
 
             $data = array(
-                'id_cctv'           => $kodeBaru,
+                'id_cctv'           => $kodemax,
                 'nama_jalan'        =>  $this->input->post('nama_jalan'),
                 'lokasi'           =>  $this->input->post('lokasi'),
                 'jumlah'           =>  $this->input->post('jumlah'),

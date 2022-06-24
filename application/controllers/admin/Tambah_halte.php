@@ -5,10 +5,27 @@ class Tambah_halte extends CI_Controller
 
     public function index()
     {
+        $kode = $this->db->select('max(id_halte) as nomor')->from('data_halte')->get()->result();
+        $newstring = substr($kode[0]->nomor, -3);
+        $baru = $newstring + 1;
+        $nourut = $this->formatNbr($baru);
+        $data['no_urut'] = 'HLT' . $nourut;
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
-        $this->load->view('admin/tambah_halte');
+        $this->load->view('admin/tambah_halte', $data);
         $this->load->view('template_admin/footer');
+    }
+
+    public function formatNbr($nbr)
+    {
+        if ($nbr == 0 || $nbr == NULL)
+            return "001";
+        else if ($nbr < 10)
+            return "00" . $nbr;
+        elseif ($nbr >= 10 && $nbr < 100)
+            return "0" . $nbr;
+        else
+            return strval($nbr);
     }
 
     public function tambah_aksi()
@@ -52,16 +69,16 @@ class Tambah_halte extends CI_Controller
             $this->load->view('template_admin/footer');
         } else {
 
-            $ci = get_instance();
-            $query = "SELECT max(id_halte) as maxKode FROM data_halte";
-            $halte = $ci->db->query($query)->row_array();
-            $kode = $halte['maxKode'];
-            $noUrut = (int) substr($kode, 6);
-            $noUrut++;
-            $kodeBaru = "HLT" . " - " . sprintf("%03s", $noUrut);
+            // $ci = get_instance();
+            // $query = "SELECT max(id_halte) as maxKode FROM data_halte";
+            // $halte = $ci->db->query($query)->row_array();
+            // $kode = $halte['maxKode'];
+            // $noUrut = (int) substr($kode, 6);
+            // $noUrut++;
+            // $kodeBaru = "HLT" . " - " . sprintf("%03s", $noUrut);
 
             $data = array(
-                'id_halte'          => $kodeBaru,
+                'id_halte'          => $this->input->post('id_halte'),
                 'nama_halte'        =>  $this->input->post('nama_jalan'),
                 'lokasi'        =>  $this->input->post('lokasi'),
                 'kondisi'           =>  $this->input->post('kondisi'),

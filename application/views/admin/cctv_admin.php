@@ -11,7 +11,7 @@
                                 <tr>
                                     <th>Lokasi</th>
                                     <th>Nama Jalan</th>
-                                    <th>Jumlah</th> 
+                                    <th>Jumlah</th>
                                     <th>Kondisi</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -27,6 +27,10 @@
                                             <?php echo anchor(
                                                 'admin/cctv_admin/edit_cctv/' . $cctv->id_cctv,
                                                 '<div class="btn btn-circle btn-primary btn-small"><i class="fa fa-edit"></i></div>'
+                                            ) ?>
+                                            <?php echo anchor(
+                                                'admin/cctv_admin/hapus/' . $cctv->id_cctv,
+                                                '<div class="btn btn-circle btn-danger btn-small"><i class="fa-solid fa-trash"></i></div>'
                                             ) ?>
                                             <?php echo anchor(
                                                 'admin/cctv_admin/detail_cctv/' . $cctv->id_cctv,
