@@ -5,6 +5,11 @@
     class Pengaduan extends CI_Controller
     {
 
+        public function __construct()
+        {
+            parent::__construct();
+            date_default_timezone_set("Asia/Jakarta");
+        }
         public function index()
         {
             $this->load->view('template/header');
@@ -67,7 +72,7 @@
                     }
                 }
                 date_default_timezone_set("Asia/Jakarta");
-                $tgl = str_replace('-', '', date('Y-m-d'));
+                $tgl = str_replace('-', '', date('d-m-Y'));
                 $last = $this->db->get('pengaduan')->result_array();
                 $terakhir = null;
                 foreach ($last as $ls) {
@@ -100,7 +105,7 @@
                     'isi'           => $this->input->post('isi'),
                     'bukti'           =>  $gambar,
                     'status'        => '1',
-                    'tgl_pengaduan'  => date('d-m-y H:i:s')
+                    'tgl_pengaduan'  => date('Y-m-d H:i:s')
                 );
                 $this->model_pengaduan->tambah_data($data, 'pengaduan');
                 redirect('no_tiket');

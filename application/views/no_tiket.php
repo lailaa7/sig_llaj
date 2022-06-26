@@ -8,7 +8,13 @@
                 </div>
             </div>
             <div class="col-lg-12 text-center">
-                <button class="btn btn-primary">Download Detail</button>
+            <a href="<?php echo base_url('no_tiket/pdf/'.$terakhir) ?>" class="btn btn-warning shadow btn-xs sharp"><i class="fa fa-print"></i></a>
+                <!-- <?php echo anchor(
+                    'no_tiket/print/' . $terakhir,
+                    '<div class="btn btn-info btn-small"><i class="fa fa-file mr-3"></i>Donwload</div>'
+                ) ?> -->
+                <!-- <?php echo anchor('no_tiket/print', '<button class="btn btn-primary btn-icon mb-3"><i class="fa fa-plus fa-sm"></i> Donwload</button>') ?> -->
+                <!-- <a herf="<?= base_url('no_tiket/print') ?>" class="button btn btn-primary text-white">Download Detail</a> -->
             </div>
         </div>
     </div>

@@ -27,6 +27,13 @@ $(function(){
 			.bindPopup("<b>"+ data.nama_jalan);
 	}
 
+	console.log(data_halte);
+	for(i=0;i<data_halte.length;i++) {
+		var data = data_halte[i];
+		L.marker([data.latitude, data.longitude]).addTo(mymap)
+			.bindPopup("<b>"+ data.nama_jalan);
+	}
+
 
 	 
 

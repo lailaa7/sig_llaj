@@ -19,4 +19,26 @@ class No_tiket extends CI_Controller
         $this->load->view('no_tiket', $data);
         // $this->load->view('template/footer');
     }
+
+    public function pdf($id)
+    {
+        $id =  $id;
+        $this->data['pengajuan'] = $this->model_tiket->print($id)->row();
+        // var_dump($data); die;
+        $this->load->library('pdfgenerator');
+
+        // title dari pdf
+        $this->data['title_pdf'] = 'Detail Pengajuan';
+
+        // filename dari pdf ketika didownload
+        $file_pdf = 'Pengaduan LLAJ';
+        // setting paper
+        $paper = 'A4';
+        //orientasi paper potrait / landscape
+        $orientation = "portrait";
+        $html = $this->load->view('print_pengaduan', $this->data, true);
+
+        // run dompdf
+        $this->pdfgenerator->generate($html, $file_pdf, $paper, $orientation);
+    }
 }
