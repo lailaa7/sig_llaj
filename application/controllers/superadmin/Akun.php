@@ -28,7 +28,11 @@ class Akun extends CI_Controller
     public function tambah_akun()
     {
         $kode = $this->db->select('max(id_user) as nomor')->from('users')->get()->result();
-        $newstring = substr($kode[0]->nomor, -3);
+        if (!$kode[0]->nomor) {
+            $newstring = 0;
+        } else {
+            $newstring = substr($kode[0]->nomor, -3);
+        }
         $baru = $newstring + 1;
         $nourut = $this->formatNbr($baru);
         $data['no_urut'] = 'USR' . $nourut;
@@ -70,4 +74,4 @@ class Akun extends CI_Controller
         $this->model_akun->hapus_data($where, 'users');
         redirect('superadmin/akun');
     }
-}
+} 

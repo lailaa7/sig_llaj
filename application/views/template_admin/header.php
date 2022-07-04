@@ -20,6 +20,8 @@
     <!-- leaflet -->
     <link href="<?= base_url() ?>assets/admin/leaflet/plugins/leaflet/leaflet.css" rel="stylesheet">
 
+    <link href="<?= base_url() ?>assets/admin/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
 </head>
 
 <body>

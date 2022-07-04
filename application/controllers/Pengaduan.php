@@ -103,6 +103,8 @@
                     'no_telp'        =>  $this->input->post('no_telp'),
                     'lokasi'           =>  $this->input->post('lokasi'),
                     'isi'           => $this->input->post('isi'),
+                    'latitude'           => $this->input->post('latitude'),
+                    'longitude'           => $this->input->post('longitude'),
                     'bukti'           =>  $gambar,
                     'status'        => '1',
                     'tgl_pengaduan'  => date('Y-m-d H:i:s')
@@ -115,7 +117,6 @@
         {
             # code...
             $data['pengaduan'] = $this->db->get_where('proses_pengaduan', array('no_tiket' => $this->input->post('no_tiket')))->row();
-
             $this->load->view('template/header');
             $this->load->view('template/navbar');
             $this->load->view('lacak', $data);

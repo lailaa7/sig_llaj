@@ -11,4 +11,6 @@ class Data_cctv extends CI_Controller
         $this->load->view('data_cctv', $data);
         $this->load->view('template/footer');
     }
+
+    
 }

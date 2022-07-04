@@ -1,51 +1,55 @@
+<div class="flash-data" data-flashdata="<?php echo $this->session->flashdata('flashdata'); ?>"></div>
 <div class="content-body">
     <div class="col-lg-12 mt-3">
         <h4 class="card-title">Edit Data </h4>
         <div class="card">
             <div class="card-body">
                 <div class="basic-form">
-                    <form action="<?php echo base_url() . 'admin/Tambah_cctv/tambah_aksi' ?>" method="POST" enctype="multipart/form-data">
+                    <form action="<?php echo base_url() . 'admin/Cctv_admin/update/'. $this->uri->segment(4) ?>" method="POST" enctype="multipart/form-data">
                         <div class="row">
+                            
+                            <?php foreach ($data_cctv as $cctv) ?>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="control-label">ID Data</label>
+                                    <input type="text" name="id_cctv" class="form-control" value="<?= $cctv->id_cctv ?>" placeholder="" readonly>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="form-group">
+                                    <label class="control-label">Lokasi Simpang</label>
+                                    <input type="text" name="lokasi" class="form-control" value="<?= $cctv->lokasi  ?>">
+                                </div>
+                            </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Nama Jalan</label>
-                                    <input type="text" name="nama_jalan" class="form-control" value="">
+                                    <input type="text" name="nama_jalan" class="form-control" value="<?= $cctv->nama_jalan ?>">
                                 </div>
                             </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="control-label">Simpang</label>
-                                    <input type="text" name="lokasi" class="form-control" placeholder=" " required>
-                                </div>
-                            </div>
+
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Jumlah</label>
-                                    <input type="number" name="jumlah" class="form-control" placeholder="" required>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="control-label">Kondisi</label>
-                                    <input type="text" name="kondisi" class="form-control" placeholder="" required>
+                                    <input type="number" name="jumlah" class="form-control" value="<?= $cctv->jumlah ?>">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Latitude</label>
-                                    <input type="number" id="latitude" name="latitude" class="form-control" placeholder=""  readonly>
+                                    <input type="number" id="latitude" name="latitude" class="form-control" value="<?= $cctv->latitude ?>">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Longitude</label>
-                                    <input type="number" name="longitude" class="form-control" placeholder=""  readonly>
+                                    <input type="number" name="longitude" class="form-control" value="<?= $cctv->longitude ?>">
                                 </div>
                             </div>
                         </div>
                         <div class="form-group row">
                             <div class="col-lg-12 text-right">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary">Simpan</button>
                             </div>
                         </div>
 

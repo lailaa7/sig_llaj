@@ -4,11 +4,16 @@
             <div class="card">
                 <div class="card-body">
                     <h4 class="card-title">Proses Pengaduan</h4>
+
+
                     <div class="table-responsive">
                         <table class="table table-bordered verticle-middle zero-configuration">
                             <thead>
                                 <tr>
                                     <th>No Tiket</th>
+                                    <th>Nama Pengirim</th>
+                                    <th>Lokasi</th>
+                                    <th>Deskripsi Pengaduan</th>
                                     <th>Status</th>
                                     <th>Aksi</th>
                                 </tr>
@@ -17,14 +22,17 @@
                                 <?php foreach ($proses as $pro) : ?>
                                     <tr>
                                         <td><?php echo $pro['no_tiket']; ?> </td>
+                                        <td><?php echo $pro['nama_pengirim']; ?> </td>
+                                        <td><?php echo $pro['lokasi']; ?> </td>
+                                        <td><?php echo $pro['isi']; ?> </td>
                                         <td>
 
                                             <?php
-                                            if ($pro['status'] == 1) {
+                                            if ($pro['status_proses'] == 1) {
                                                 echo '<span class="label label-pill label-primary">Diterima</span>';
-                                            } elseif ($pro['status'] == 2) {
+                                            } elseif ($pro['status_proses'] == 2) {
                                                 echo  '<span class="label label-pill label-warning">Diproses</span>';
-                                            } elseif ($pro['status'] == 3) {
+                                            } elseif ($pro['status_proses'] == 3) {
                                                 echo '<span class="label label-pill label-danger">Ditolak</span>';
                                             } else {
                                                 echo '<span class="label label-pill label-success">Selesai</span>';

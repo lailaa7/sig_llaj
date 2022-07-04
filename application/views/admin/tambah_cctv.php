@@ -4,7 +4,16 @@
           <div class="card">
               <div class="card-body">
                   <div class="form-validation">
+                    
                       <form action="<?php echo base_url() . 'admin/Tambah_cctv/tambah_aksi' ?>" method="POST" enctype="multipart/form-data">
+                          <div class="row">
+                              <div class="col-lg-6">
+                                  <div class="form-group">
+                                      <label class="control-label">ID Data</label>
+                                      <input type="text" name="id_cctv" class="form-control" value="<?= $no_urut ?>" placeholder="" readonly>
+                                  </div>
+                              </div>
+                          </div>
                           <div class="row">
                               <div class="col-lg-6">
                                   <div class="form-group">

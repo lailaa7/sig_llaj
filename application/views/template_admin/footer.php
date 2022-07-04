@@ -45,6 +45,7 @@
       <script src="<?php echo base_url() ?>assets/admin./js/dashboard/dashboard-1.js"></script>
 
       <!-- leaflet -->
+
       <script src="<?= base_url() ?>assets/admin/leaflet/plugins/leaflet/leaflet.js"></script>
       <script src="<?= base_url() ?>assets/admin/leaflet/pages/jquery.leaflet-map.init.js"></script>
 
@@ -54,6 +55,13 @@
       <script src="<?= base_url() ?>assets/admin/./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
 
       <script src="https://kit.fontawesome.com/9628c2592e.js" crossorigin="anonymous"></script>
+
+      <!-- sweet alert -->
+      <script src="<?= base_url() ?>assets/admin/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+      <!-- <script src="<?= base_url() ?>assets/admin/plugins/sweetalert/dist/sweetalert.init.js"></script> -->
+      <script src="<?= base_url() ?>assets/admin/js/mysweetalerts.js"></script>
+
+
       </body>
 
       </html>

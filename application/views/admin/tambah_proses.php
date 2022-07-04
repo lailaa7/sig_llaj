@@ -68,7 +68,7 @@
                                         <input type="text" class="form-control" value="Selesai" disabled>
                                     <?php endif; ?>
 
-                                </div> 
+                                </div>
                             </div>
                         </div>
                         <div class="row">

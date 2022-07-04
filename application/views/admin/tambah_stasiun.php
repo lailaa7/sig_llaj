@@ -1,39 +1,38 @@
 <div class="content-body">
     <div class="col-lg-12 mt-3">
-        <h4 class="card-title">Tambah Data Halte</h4>
+        <h4 class="card-title">Tambah Data Stasiun </h4>
         <div class="card">
             <div class="card-body">
-                <div class="form-validation">
-                    <form action="<?php echo base_url() . 'admin/tambah_halte/tambah_aksi' ?>" method="POST" enctype="multipart/form-data">
+                <div class="basic-form">
+                    <form action="<?php echo base_url() . 'admin/Tambah_stasiun/tambah_aksi' ?>" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">ID Data</label>
-                                    <input type="text" name="id_halte" class="form-control" value="<?= $no_urut ?>" placeholder="" readonly>
+                                    <input type="text" name="id_stasiun" class="form-control" value="<?= $no_urut ?>" readonly>
                                 </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label">Lokasi</label>
-                                    <input type="text" name="lokasi" class="form-control" placeholder=" ">
-
+                                    <label class="control-label">Nama Stasiun</label>
+                                    <input type="text" name="nama_stasiun" class="form-control" value="">
                                     <div class="text-danger">
-                                        <?php echo form_error('lokasi'); ?>
+                                        <?php echo form_error('nama_stasiun'); ?>
                                     </div>
+
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Nama Jalan</label>
-                                    <input type="text" name="nama_jalan" class="form-control" placeholder="">
+                                    <input type="text" name="lokasi" class="form-control" value="">
 
                                     <div class="text-danger">
-                                        <?php echo form_error('nama_jalan'); ?>
+                                        <?php echo form_error('lokasi'); ?>
                                     </div>
                                 </div>
-
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">

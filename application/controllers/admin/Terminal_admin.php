@@ -12,23 +12,11 @@ class Terminal_admin extends CI_Controller
         $this->load->view('template_admin/footer');
     }
 
-    public function edit_cctv($id)
+    public function Hapus($id)
     {
-        $where = array('id_cctv' => $id);
-        $data['data_cctv']  = $this->model_cctv->edit_data($where, 'data_cctv')->result();
-        $this->load->view('template_admin/header');
-        $this->load->view('template_admin/sidebar');
-        $this->load->view('admin/edit_cctv', $data);
-        $this->load->view('template_admin/footer');
-    }
-
-    public function detail_cctv($id)
-    {
-        $this->load->model('model_cctv');
-        $data['detail'] = $this->model_cctv->detail_data($id);
-        $this->load->view('template_admin/header');
-        $this->load->view('template_admin/sidebar');
-        $this->load->view('admin/detail_cctv', $data);
-        $this->load->view('template_admin/footer');
+        $where = array('id_terminal' => $id);
+        $this->model_parkir->Hapus_data($where, 'data_terminal');
+        $this->session->set_flashdata('flashdata', 'Menghapus');
+        redirect('admin/Terminal_admin');
     }
 }

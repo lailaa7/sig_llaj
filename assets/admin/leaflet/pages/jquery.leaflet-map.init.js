@@ -5,7 +5,7 @@
  */
 
 
-$(function(){
+  $(function(){
 	var latInput = document.querySelector("[name=latitude]");
 	var lngInput = document.querySelector("[name=longitude]");
 	var marker;

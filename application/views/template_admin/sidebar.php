@@ -7,7 +7,7 @@
                     <li class="nav-label">Admin</li>
                     <li>
                         <a class="nav-label" href="<?php echo base_url('admin/dashboard') ?>" aria-expanded="false">
-                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Dashboard</span>
+                            <i class="icon-speedometer menu-icon"></i><span class="nav-text">Beranda</span>
                         </a>
                         <!-- <ul aria-expanded="false">
                             <li><a href="./index.html">Beranda</a></li>
@@ -55,7 +55,7 @@
                             <li><a href="<?php echo base_url('admin/proses_pengaduan') ?>">Proses Pengaduan</a></li>
                         </ul>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="icon-graph menu-icon"></i> <span class="nav-text">Laporan</span>
                         </a>
@@ -67,7 +67,7 @@
                             <li><a href="./chart-sparkline.html">Sparkline</a></li>
                             <li><a href="./chart-peity.html">Peity</a></li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- <li class="nav-label">UI Components</li>
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">

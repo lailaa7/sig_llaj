@@ -6,7 +6,7 @@ class Model_pengaduan extends CI_Model
 
     public function tampil_data()
     {
-        $result =  $this->db->where('status', '1')->get('pengaduan');
+        $result =  $this->db->get('pengaduan');
         return $result;
     }
 
@@ -18,6 +18,12 @@ class Model_pengaduan extends CI_Model
     public function detail_data($id = NULL)
     {
         $query = $this->db->get_where('pengaduan', array('no_tiket' => $id))->row();
+        return $query;
+    }
+
+    public function get_status($id = NULL)
+    {
+        $query = $this->db->get_where('proses_pengaduan', array('no_tiket' => $id))->row();
         return $query;
     }
 

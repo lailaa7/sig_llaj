@@ -11,4 +11,12 @@ class Halte_admin extends CI_Controller
         $this->load->view('admin/halte_admin', $data);
         $this->load->view('template_admin/footer');
     }
+
+    public function Hapus($id)
+    {
+        $where = array('id_halte' => $id);
+        $this->model_parkir->Hapus_data($where, 'data_halte');
+        $this->session->set_flashdata('flashdata', 'Menghapus');
+        redirect('admin/Halte_admin');
+    }
 }

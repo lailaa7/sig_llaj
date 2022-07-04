@@ -9,7 +9,9 @@ $(function(){
 	var latInput = document.querySelector("[name=latitude]");
 	var lngInput = document.querySelector("[name=longitude]");
 	var marker;
-	var mymap = L.map('Leaf_default').setView([-7.632936, 111.509327], 13);
+	var mymap = L.map('Leaf_default').setView([-7.632, 111.509], 13);
+
+
 	
 
 	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -20,21 +22,25 @@ $(function(){
 		id: 'mapbox/streets-v11'
 	}).addTo(mymap);
 
-	console.log(data_cctv);
 	for(i=0;i<data_cctv.length;i++) {
 		var data = data_cctv[i];
 		L.marker([data.latitude, data.longitude]).addTo(mymap)
 			.bindPopup("<b>"+ data.nama_jalan);
 	}
 
-	console.log(data_halte);
-	for(i=0;i<data_halte.length;i++) {
-		var data = data_halte[i];
-		L.marker([data.latitude, data.longitude]).addTo(mymap)
-			.bindPopup("<b>"+ data.nama_jalan);
+	function onMapClicktambah(e) {
+		var lat = e.latlng.lat;
+		var lng = e.latlng.lng;
+		if(!marker){
+			marker = L.marker(e.latlng).addTo(mymap);
+		} else{
+			marker.setLatLng(e.latlng);
+		}
+		
+		latInput.value = lat;
+		lngInput.value = lng;
 	}
-
-
+	mymap.on('click', onMapClicktambah);
 	 
 
 	

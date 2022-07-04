@@ -59,7 +59,7 @@ p {
 .navbar-toggle .icon-bar {
   background: #223a66;
   color: #fff; 
-}
+} 
 
 input[type="email"], input[type="password"], input[type="text"], input[type="tel"] {
   box-shadow: none;
@@ -72,6 +72,53 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   box-shadow: none;
   border: 1px solid #223a66;
 }
+
+.label {
+  padding: 7px 10px;
+  line-height: 15px;
+  font-weight: 600;
+  border-radius: 4px;
+  font-size: 85%; }
+
+.label-pill {
+  border-radius: 10rem;
+  padding-left: 0.6em;
+  padding-right: 0.6em; }
+
+.label-rounded {
+  border-radius: 60px; }
+
+.label-secondary {
+  background-color: #7571f9;
+  color: #fff; }
+
+.label-primary {
+  background-color: #9097c4;
+  color: #fff; }
+
+.label-success {
+  background-color: #6fd96f;
+  color: #fff; }
+
+.label-info {
+  background-color: #4d7cff;
+  color: #fff; }
+
+.label-warning {
+  background-color: #f29d56;
+  color: #fff; }
+
+.label-danger {
+  background-color: #ff5e5e;
+  color: #fff; }
+
+.label-dark {
+  background-color: #464a53;
+  color: #fff; }
+
+.label-light {
+  background-color: #5e5e5e;
+  color: #fff; }
 
 .form-control {
   box-shadow: none;

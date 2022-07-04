@@ -10,6 +10,14 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
+                                    <label class="control-label">ID Data</label>
+                                    <input type="text" name="id_parkir" class="form-control" value="<?= $no_urut ?>" placeholder="" readonly>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="form-group">
                                     <label class="control-label">Nama Jalan</label>
                                     <input type="text" name="nama_jalan" class="form-control" value="<?php set_value('nama_jalan') ?>">
 
@@ -19,23 +27,19 @@
                                 </div>
 
                             </div>
-                            <!-- <div class="col-lg-6">
-                                <div class="form-group">
-                                    <label class="control-label">Simpang</label>
-                                    <input type="text" name="lokasi" class="form-control" placeholder=" " required>
-                                </div>
-                            </div> -->
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label">Kondisi</label>
-                                    <input type="text" name="kondisi" class="form-control" placeholder="">
+                                    <label class="control-label">Lokasi</label>
+                                    <input type="text" name="lokasi" class="form-control" placeholder="">
 
                                     <div class="text-danger">
-                                        <?php echo form_error('kondisi'); ?>
+                                        <?php echo form_error('lokasi'); ?>
                                     </div>
                                 </div>
 
                             </div>
+                        </div>
+                        <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Latitude</label>
