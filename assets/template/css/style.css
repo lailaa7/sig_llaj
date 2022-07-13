@@ -13,13 +13,14 @@ html {
 }
 
 body {
-  line-height: 1.6;
+  margin: 0;
   font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  font-size: 16px;
-  color: #6F8BA4;
+  font-size: 0.875rem;
   font-weight: 400;
-}
+  line-height: 1.5;
+  color: #76838f;
+  text-align: left;
+  background-color: #F3F3F9; }
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   font-family: "Exo", sans-serif;
@@ -55,6 +56,7 @@ h6, .h6 {
 p {
   line-height: 30px;
 }
+
 
 .navbar-toggle .icon-bar {
   background: #223a66;
@@ -158,6 +160,19 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   border-radius: 25px;
 }
 
+.btn-icon-right {
+  border-left: 1px solid rgba(120, 130, 140, 0.13);
+  display: inline-block;
+  margin: -8px 0 -8px 13px;
+  padding: 10px 0 10px 13px; }
+
+.btn-icon-left {
+  background: #fff;
+  border-radius: 100px;
+  display: inline-block;
+  margin: -5px 13px -5px -15px;
+  padding: 5px 10px 6px; }
+
 .btn.btn-icon i {
   border-left: 1px solid rgba(255, 255, 255, 0.09);
   padding-left: 15px;
@@ -256,6 +271,9 @@ input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focu
   background: #fff;
   color: #222;
 }
+
+.btn-rounded {
+  border-radius: 60px; }
 
 .btn-round {
   border-radius: 4px;
@@ -379,7 +397,7 @@ a:focus {
 }
 
 .page-title {
-  padding: 120px 0px 70px 0px;
+  padding: 70px 0px 70px 0px;
   position: relative;
 }
 
@@ -503,7 +521,7 @@ a:focus {
   color: #e12454;
 }
 
-.header-top-bar {
+.header-top-bar { 
   background: #223a66;
   font-size: 15px;
   padding: 10px 0px;
@@ -528,7 +546,7 @@ a:focus {
 }
 
 .bg-1 {
-  background: url("../images/bg/22.jpg") no-repeat 50% 50%;
+  /* background: no-repeat 50% 50%; */
   background-size: cover;
   position: relative;
 }
@@ -537,13 +555,17 @@ a:focus {
   position: relative;
   overflow: hidden;
   /* background: #223A66; */
-  background: #223A66;
+  /* background: url("../images/bg/bg.png") no-repeat 50% 50%; */
   background-size: cover;
-  min-height: 550px;
 }
 
 .banner .block {
-  padding: 80px 0px 160px;
+  padding: 0px 0px 50px;
+}
+
+.gambar {
+  height: 70px;
+  width: 70px;
 }
 
 .banner .block h1 {

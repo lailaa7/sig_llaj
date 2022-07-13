@@ -30,10 +30,11 @@
                 <div class="row">
                     <div class="col-lg-6 px-3">
                         <div class="form-group">
-                            <label class="control-label txt-left">Lampiran</label>
-                            <input name="bukti" id="bukti" type="file" class="form-control">
+                            <label class="control-label txt-left">Bukti Pengaduan</label>
+                            <input name="bukti" id="bukti" type="file" class="form-control" accept="image/*">
                             <div class="text-danger">
-                                <?php echo form_error('bukti'); ?>
+                                <?php
+                                echo $this->session->flashdata('gambar') ?>
                             </div>
                         </div>
                     </div>
@@ -51,43 +52,14 @@
 
                     <div class="col-lg-6 px-3">
                         <div class="form-group">
-                            <label class="control-label txt-left">Lokasi</label>
+                            <label class="control-label txt-left">Deskripsi Lokasi</label>
                             <input name="lokasi" id="lokasi" type="text" class="form-control">
                             <div class="text-danger">
                                 <?php echo form_error('lokasi'); ?>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-6 px-3">
-                        <div class="form-group">
-                            <label class="control-label txt-left">Longitude</label>
-                            <input name="latitude" id="latitude" type="text" class="form-control">
-                            <div class="text-danger">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 px-3">
-                        <div class="form-group">
-                            <label class="control-label txt-left">Latitude</label>
-                            <input name="longitude" id="longitude" type="text" class="form-control">
-                            <div class="text-danger">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-12 mt-3 mb-3">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="card-body">
-                                    <div id="Leaf_default" class="" style="height: 400px">
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-
-
                 <div class=" row">
                     <div class="col-lg-12 text-right">
                         <button type="submit" class="btn btn-primary">Kirim</button>
@@ -96,21 +68,21 @@
             </form>
         </div>
     </div>
-    <div class=" mb-3 mt-5 px-3 py-2">
-        <form action="<?= base_url('pengaduan/DetailPengaduan') ?>" method="POST" enctype="multipart/form-data">
-            <div class="row">
-                <div class="col-lg-6 px-3 mr-auto ml-auto text-center">
-                    <div class="form-group">
-                        <h2 class="control-label title-color">Lacak Pengaduan Disini</h2>
-                        <input name="no_tiket" id="no_tiket" type="text" class="form-control">
+    <div class="card mb-3 mt-3  text-dark">
+        <div class=" mb-3 mt-5 px-3 py-2">
+            <form action="<?= base_url('pengaduan/DetailPengaduan') ?>" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-lg-6 px-3 mr-auto ml-auto text-center">
+                        <div class="form-group">
+                            <h2 class="control-label title-color">Lacak Pengaduan Disini</h2>
+                            <input name="no_tiket" id="no_tiket" type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 text-center">
+                        <button type="submit" class="btn btn-primary">Lacak</button>
                     </div>
                 </div>
-                <div class="col-lg-12 text-center">
-                    <button type="submit" class="btn btn-primary">Lacak</button>
-                </div>
-            </div>
-        </form>
+            </form>
+        </div>
     </div>
-
-
 </div>

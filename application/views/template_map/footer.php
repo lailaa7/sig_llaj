@@ -90,7 +90,7 @@
 <script src="<?php echo base_url() ?>assets/template/plugins/counterup/jquery.counterup.min.js"></script>
 <!-- Google Map -->
 <script src="<?php echo base_url() ?>assets/template/plugins/google-map/map.js"></script>
-<script src="<?php echo base_url() ?>assets/template/https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script>
+<!-- <script src="<?php echo base_url() ?>assets/template/https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA&callback=initMap"></script> -->
 
 <script src="<?php echo base_url() ?>assets/template/js/script.js"></script>
 <script src="<?php echo base_url() ?>assets/template/js/contact.js"></script>

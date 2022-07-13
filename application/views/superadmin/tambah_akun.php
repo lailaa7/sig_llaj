@@ -4,23 +4,24 @@
         <div class="card">
             <div class="card-body">
                 <div class="basic-form">
-
-                    <!-- <?php echo validation_errors(); ?> -->
-
-                    <form action="<?php echo base_url() . 'superadmin/akun/tambah_aksi' ?>" method="POST" enctype="multipart/form-data">
+                    <form action="<?php echo base_url() . 'superadmin/tambah_akun/tambah_aksi' ?>" method="POST" enctype="multipart/form-data">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label">ID User</label>
+                                    <label class="control-label">ID Data</label>
                                     <input type="text" name="id_user" class="form-control" value="<?= $no_urut ?>" readonly>
-
                                 </div>
                             </div>
+                        </div>
+                        <div class="row"> 
+
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Nama</label>
                                     <input type="text" name="nama" class="form-control" placeholder="">
-
+                                    <div class="text-danger">
+                                        <?php echo form_error('nama'); ?>
+                                    </div>
                                 </div>
 
                             </div>
@@ -38,23 +39,27 @@
                                 <div class="form-group">
                                     <label class="control-label">Username</label>
                                     <input type="text" name="username" class="form-control" value="">
+                                    <div class="text-danger">
+                                        <?php echo form_error('username'); ?>
+                                    </div>
                                 </div>
+
 
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Password</label>
                                     <input type="text" name="password" class="form-control" placeholder="">
-
+                                    <div class="text-danger">
+                                        <?php echo form_error('password'); ?>
+                                    </div>
                                 </div>
 
                             </div>
-
-
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">Status</label>
-                                    <select name="status" class="form-control">
+                                    <select name="status" class="form-control" required>
                                         <option value="1">Aktif</option>
                                         <option value="2">Non-Aktif</option>
                                     </select>

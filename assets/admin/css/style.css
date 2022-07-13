@@ -500,7 +500,7 @@ pre {
     word-break: normal; }
 
 .pre-scrollable {
-  max-height: 340px;
+  max-height: 340px; 
   overflow-y: scroll; }
 
 .container {
@@ -11026,7 +11026,7 @@ table.dataTable thead .sorting::after {
   padding: 0.25rem 0.5rem; }
 
 .btn-sm, .btn-group-sm > .btn {
-  padding: 0.25rem 0.5rem !important; }
+  padding: 0.25rem 0.5rem !important; } 
 
 .btn-flat {
   border-radius: 0; }

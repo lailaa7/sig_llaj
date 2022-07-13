@@ -18,10 +18,6 @@
                             <td><?php echo $detail->jumlah ?> </td>
                         </tr>
                         <tr>
-                            <th>Kondisi</th>
-                            <td><?php echo $detail->kondisi ?> </td>
-                        </tr>
-                        <tr>
                             <th>Longitude</th>
                             <td><?php echo $detail->longitude ?> </td>
                         </tr>

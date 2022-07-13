@@ -14,9 +14,16 @@ class Model_akun extends CI_Model
         $this->db->insert($table, $data);
     }
 
-    public function edit_data($where, $table)
+    public function Edit_data($where, $table)
     {
         return $this->db->get_where($table, $where);
+    }
+
+    public function Update_data($where, $data, $table)
+    {
+        $this->db->where($where);
+        $query = $this->db->update($table, $data);
+        return $query;
     }
 
     public function hapus_data($where, $table)

@@ -25,7 +25,7 @@
                                         <td><?php echo $term->longitude ?></td>
                                         <td><?php echo $term->latitude ?></td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/Terminal_admin/Edit_terminal/' . $term->id_terminal,)
+                                            <a href="<?php echo base_url('admin/Terminal_admin/Edit/' . $term->id_terminal,)
                                                         ?>" class="btn btn-circle btn-primary btn-small">
                                                 <i class="fa fa-edit"></i>
                                             </a>
@@ -35,10 +35,10 @@
                                                 <i class="fa-solid fa-trash"></i>
                                             </a>
 
-                                            <a href="<?php echo base_url('admin/Terminal_admin/Detail_terminal/' . $term->id_terminal,)
+                                            <!-- <a href="<?php echo base_url('admin/Terminal_admin/Detail_terminal/' . $term->id_terminal,)
                                                         ?>" class="btn btn-circle btn-info btn-small">
                                                 <i class="fa fa-eye"></i>
-                                            </a>
+                                            </a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

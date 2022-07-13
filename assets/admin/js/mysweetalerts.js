@@ -28,3 +28,24 @@ $('.btn-hps').on('click', function (e){
 		} 
 	})
 });
+
+$('.btn-reset').on('click', function (e){
+
+	e.preventDefault();
+	const href = $(this).attr('href');
+
+	Swal.fire({
+		title: 'Apakah Anda Yakin',
+		text: 'Akan mereset password?',
+		type: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Reset!',
+		cancelButtonText: 'Batal'
+	  }).then((result) => {
+		if (result.value == true) {
+		 document.location.href = href;
+		} 
+	})
+});

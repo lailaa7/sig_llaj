@@ -15,8 +15,9 @@
                             <thead>
                                 <tr>
                                     <th>Nama Jalan</th>
+                                    <th>Deskripsi Lokasi</th>
+                                    <th>Latitude</th>
                                     <th>Longitude</th>
-                                    <th>Langitude</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -24,8 +25,9 @@
                                 <?php foreach ($data_parkir as $park) : ?>
                                     <tr>
                                         <td><?php echo $park->nama_jalan ?></td>
-                                        <td><?php echo $park->longitude ?></td>
+                                        <td><?php echo $park->lokasi ?></td>
                                         <td><?php echo $park->latitude ?></td>
+                                        <td><?php echo $park->longitude ?></td>
                                         <td>
                                             <a href="<?php echo base_url('admin/Parkir_admin/Edit_parkir/' . $park->id_parkir,)
                                                         ?>" class="btn btn-circle btn-primary btn-small">
@@ -36,10 +38,10 @@
                                                 <i class="fa-solid fa-trash"></i>
                                             </a>
 
-                                            <a href="<?php echo base_url('admin/Parkir_admin/Detail_cctv/' . $park->id_parkir,)
-                                                        ?>" class="btn btn-circle btn-info btn-small">
+                                            <!-- <a href="<?php echo base_url('admin/Parkir_admin/Detail_cctv/' . $park->id_parkir,)
+                                                            ?>" class="btn btn-circle btn-info btn-small">
                                                 <i class="fa fa-eye"></i>
-                                            </a>
+                                            </a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

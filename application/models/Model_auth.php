@@ -3,7 +3,7 @@
     class Model_auth extends CI_Model
     {
 
-        public function cek_user($username) //untuk mengecek apakah ada atau tidaknya
+        public function Cek_user($username) //untuk mengecek apakah ada atau tidaknya
         {
             $query = $this->db->query("SELECT * FROM users WHERE username = '$username' ");
 
@@ -14,7 +14,7 @@
             }
         }
 
-        public function cek_login($username, $password)
+        public function Cek_login($username, $password)
         {
             $query = $this->db->query("SELECT * FROM users WHERE username = '$username' and password = '$password' ");
 

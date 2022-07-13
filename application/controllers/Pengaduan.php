@@ -28,10 +28,16 @@
             );
             $this->form_validation->set_rules(
                 'no_telp',
-                'No Telepon',
+                'No Telpon',
                 'required',
                 array('required' => '%s tidak boleh kosong')
             );
+            // $this->form_validation->set_rules(
+            //     'bukti',
+            //     'Bukti',
+            //     'required',
+            //     array('required' => '%s tidak boleh kosong')
+            // );
             $this->form_validation->set_rules(
                 'lokasi',
                 'Lokasi',
@@ -58,15 +64,29 @@
                 $this->load->view('template/footer');
             } else {
                 $gambar         = $_FILES['bukti']['name'];
-                if ($gambar = '') {
+                echo print_r($gambar);
+                // exit;
+                if (empty($gambar)) {
+                    $this->session->set_flashdata('gambar', '<span class="text-danger">Gambar tidak boleh kosong!</span>');
+                    $this->load->view('template/header');
+                    $this->load->view('template/navbar');
+                    $this->load->view('pengaduan');
+                    $this->load->view('template/footer');
+                    return false;
                 } else {
                     $config['upload_path'] = './lampiran';
-                    $config['allowed_types'] = 'jpg|png';
+                    $config['allowed_types'] = 'jpg|png|jpeg';
                     $config['file_name'] = 'L' . date('dmh');
 
                     $this->load->library('upload', $config);
                     if (!$this->upload->do_upload('bukti')) {
-                        echo "Gambar gagal diupload";
+                        // echo "Gambar gagal diupload";
+                        $this->session->set_flashdata('gambar', '<span class="text-danger">Format gambar tidak sesuai!</span>');
+                        $this->load->view('template/header');
+                        $this->load->view('template/navbar');
+                        $this->load->view('pengaduan');
+                        $this->load->view('template/footer');
+                        return false;
                     } else {
                         $gambar = $this->upload->data('file_name');
                     }
@@ -103,8 +123,6 @@
                     'no_telp'        =>  $this->input->post('no_telp'),
                     'lokasi'           =>  $this->input->post('lokasi'),
                     'isi'           => $this->input->post('isi'),
-                    'latitude'           => $this->input->post('latitude'),
-                    'longitude'           => $this->input->post('longitude'),
                     'bukti'           =>  $gambar,
                     'status'        => '1',
                     'tgl_pengaduan'  => date('Y-m-d H:i:s')

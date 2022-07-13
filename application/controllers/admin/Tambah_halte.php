@@ -41,8 +41,8 @@ class Tambah_halte extends CI_Controller
             array('required' => '%s tidak boleh kosong')
         );
         $this->form_validation->set_rules(
-            'nama_jalan',
-            'Nama Jalan',
+            'nama_halte',
+            'Nama Halte',
             'required',
             array('required' => '%s tidak boleh kosong')
         );
@@ -78,7 +78,7 @@ class Tambah_halte extends CI_Controller
 
             $data = array(
                 'id_halte'          => $this->input->post('id_halte'),
-                'nama_halte'        =>  $this->input->post('nama_jalan'),
+                'nama_halte'        =>  $this->input->post('nama_halte'),
                 'lokasi'        =>  $this->input->post('lokasi'),
                 'latitude'           => $this->input->post('latitude'),
                 'longitude'           =>  $this->input->post('longitude')

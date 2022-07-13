@@ -2,7 +2,7 @@
 <div class="container-fluid">
     <div class="content-body">
         <div class="col-lg-12 mt-3">
-            <a href="<?php echo base_url('admin/tambah_cctv',)
+            <a href="<?php echo base_url('admin/Tambah_cctv',)
                         ?>" class="btn btn-rounded btn-primary btn-icon mb-3">
                 <i class="fa fa-plus fa-sm"></i>Tambah Data
             </a>
@@ -16,6 +16,8 @@
                                     <th>Lokasi</th>
                                     <th>Nama Jalan</th>
                                     <th>Jumlah</th>
+                                    <th>Latitude</th>
+                                    <th>Longitude</th>
                                     <th>Aksi</th>
                                 </tr>
                             </thead>
@@ -25,21 +27,21 @@
                                         <td><?php echo $cctv->lokasi ?> </td>
                                         <td><?php echo $cctv->nama_jalan ?></td>
                                         <td><?php echo $cctv->jumlah ?></td>
+                                        <td><?php echo $cctv->latitude ?></td>
+                                        <td><?php echo $cctv->longitude ?></td>
                                         <td>
                                             <a href="<?php echo base_url('admin/Cctv_admin/edit_cctv/' . $cctv->id_cctv,)
                                                         ?>" class="btn btn-circle btn-primary btn-small">
                                                 <i class="fa fa-edit"></i>
                                             </a>
-
                                             <a href="<?php echo base_url('admin/cctv_admin/hapus/' . $cctv->id_cctv,)
                                                         ?>" class="btn btn-circle btn-danger btn-small btn-hps">
                                                 <i class="fa-solid fa-trash"></i>
                                             </a>
-
-                                            <a href="<?php echo base_url('admin/cctv_admin/detail_cctv/' . $cctv->id_cctv,)
+                                            <!-- <a href="<?php echo base_url('admin/cctv_admin/detail_cctv/' . $cctv->id_cctv,)
                                                         ?>" class="btn btn-circle btn-info btn-small">
                                                 <i class="fa fa-eye"></i>
-                                            </a>
+                                            </a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

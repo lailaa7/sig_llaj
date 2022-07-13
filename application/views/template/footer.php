@@ -111,5 +111,5 @@
 <script src="<?= base_url() ?>assets/admin/./plugins/sweetalert/js/sweetalert.min.js"></script>
 <script src="<?= base_url() ?>assets/admin/./plugins/sweetalert/js/sweetalert.init.js"></script>
 </body>
-
+ 
 </html>

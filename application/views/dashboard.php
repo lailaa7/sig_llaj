@@ -1,44 +1,51 @@
 <!-- Slider Start -->
 
-<section class="banner" style="background:#223A66;">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-12 col-xl-7">
-
+<div class="banner" style="background: url('<?= base_url('assets/template/images/bg/bg.png') ?>') no-repeat 50% 50%; background-size: cover;">
+    <section class="page-title">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="block text-center h-100">
+                        <img src="<?php echo base_url() ?>assets/template/images/logo-dishub.png" alt="" style="height: 300px; weidth:300px;">
+                        <h1 class="text-capitalize mt-4 text-white">SISTEM INFORMASI GEOGRAFIS</h1>
+                        <h1 class="text-capitalize text-white">Lalu Lintas Angkutan Jalan</h1>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 <section class="features">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12 mb-2">
+            <div class="col-lg-12">
                 <div class="feature-block d-lg-flex">
-                    <div class="feature-item mb-auto mt-auto">
+                    <div class="feature-item mb-5 mb-lg-0">
                         <div class="feature-icon mb-4">
-                            <i class="icofont-surgeon-alt"></i>
+                            <i class="icofont-map"></i>
                         </div>
                         <!-- <span>24 Hours Service</span> -->
                         <h4 class="mb-3">Peta LLAJ</h4>
                         <div>
                             <p class="mb-4">Lokasi persebaran sarana prasarana LLAJ</p>
                         </div>
-                        <a href="<?php echo base_url('peta') ?>" class="btn btn-main btn-round-full">Selengkapnya</a>
+                        <a href="<?php echo base_url('Peta') ?>" class="btn btn-main btn-round-full">Selengkapnya</a>
                     </div>
 
-                    <div class="feature-item mb-auto mt-auto">
+                    <div class="feature-item mb-5 mb-lg-0">
                         <div class="feature-icon mb-4">
-                            <i class="icofont-ui-clock"></i>
+                            <i class="icofont-bullhorn"></i>
                         </div>
                         <div class="mt-auto mb-auto">
                             <h4 class="mb-3">Pengaduan</h4>
                             <p>Sampaikan aduan Anda </p>
 
                         </div>
-                        <a href="<?php echo base_url('pengaduan') ?>" class="btn btn-main btn-round-full">Selengkapnya</a>
+                        <a href="<?php echo base_url('Pengaduan') ?>" class="btn btn-main btn-round-full">Selengkapnya</a>
                     </div>
 
-                    <div class="feature-item mb-auto mt-auto">
+                    <div class="feature-item mb-5 mb-lg-0">
                         <div class="feature-icon mb-4">
                             <i class="icofont-support"></i>
                         </div>
@@ -47,48 +54,21 @@
                             <p>Halaman Khusus Admin</p>
                         </div>
 
-                        <a href="<?php echo base_url('auth/login') ?>" class="btn btn-main btn-round-full">Selengkapnya</a>
+                        <a href="<?php echo base_url('Auth/Login') ?>" class="btn btn-main btn-round-full">Selengkapnya</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
-
-<!-- <section class="section about">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-4 col-sm-6">
-                <div class="about-img">
-                    <img src="images/about/img-1.jpg" alt="" class="img-fluid">
-                    <img src="images/about/img-2.jpg" alt="" class="img-fluid mt-4">
-                </div>
-            </div>
-            <div class="col-lg-4 col-sm-6">
-                <div class="about-img mt-4 mt-lg-0">
-                    <img src="images/about/img-3.jpg" alt="" class="img-fluid">
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="about-content pl-4 mt-4 mt-lg-0">
-                    <h2 class="title-color">Personal care <br>& healthy living</h2>
-                    <p class="mt-4 mb-5">We provide best leading medicle service Nulla perferendis veniam deleniti ipsum officia dolores repellat laudantium obcaecati neque.</p>
-
-                    <a href="service.html" class="btn btn-main-2 btn-round-full btn-icon">Services<i class="icofont-simple-right ml-3"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<section class="cta-section mt-5">
+<!-- <section class="cta-section mt-5">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7 text-center">
                 <div class="section-title">
-                    <h2>Tuliskan Aduanmu</h2>
+                    <h2>Sampaikan Aduanmu</h2>
                     <div class="divider mx-auto my-4"></div>
-                    <!-- <p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p> -->
+                    <p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
                 </div>
             </div>
         </div>
@@ -96,8 +76,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6">
                     <div class="counter-stat">
-                        <i class="icofont-doctor"></i>
-                        <span class="h3">58</span>k
+                        <i class="icofont-law-document"></i></i>
+                        <span class="h3">Tulis Aduan</span>
                         <p>Happy People</p>
                     </div>
                 </div>
@@ -126,274 +106,39 @@
             </div>
         </div>
     </div>
-</section>
-<!-- <section class="section service gray-bg">
+</section> -->
+
+<section class="section service gray-bg">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-7 text-center">
                 <div class="section-title">
-                    <h2>Award winning patient care</h2>
-                    <div class="divider mx-auto my-4"></div>
-                    <p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="service-item mb-4">
-                    <div class="icon d-flex align-items-center">
-                        <i class="icofont-laboratory text-lg"></i>
-                        <h4 class="mt-3 mb-3">Laboratory services</h4>
-                    </div>
-
-                    <div class="content">
-                        <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="service-item mb-4">
-                    <div class="icon d-flex align-items-center">
-                        <i class="icofont-heart-beat-alt text-lg"></i>
-                        <h4 class="mt-3 mb-3">Heart Disease</h4>
-                    </div>
-                    <div class="content">
-                        <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="service-item mb-4">
-                    <div class="icon d-flex align-items-center">
-                        <i class="icofont-tooth text-lg"></i>
-                        <h4 class="mt-3 mb-3">Dental Care</h4>
-                    </div>
-                    <div class="content">
-                        <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="service-item mb-4">
-                    <div class="icon d-flex align-items-center">
-                        <i class="icofont-crutch text-lg"></i>
-                        <h4 class="mt-3 mb-3">Body Surgery</h4>
-                    </div>
-
-                    <div class="content">
-                        <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="service-item mb-4">
-                    <div class="icon d-flex align-items-center">
-                        <i class="icofont-brain-alt text-lg"></i>
-                        <h4 class="mt-3 mb-3">Neurology Sargery</h4>
-                    </div>
-                    <div class="content">
-                        <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 col-sm-6">
-                <div class="service-item mb-4">
-                    <div class="icon d-flex align-items-center">
-                        <i class="icofont-dna-alt-1 text-lg"></i>
-                        <h4 class="mt-3 mb-3">Gynecology</h4>
-                    </div>
-                    <div class="content">
-                        <p class="mb-4">Saepe nulla praesentium eaque omnis perferendis a doloremque.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<!-- <section class="section appoinment">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 ">
-                <div class="appoinment-content">
-                    <img src="images/about/img-3.jpg" alt="" class="img-fluid">
-                    <div class="emergency">
-                        <h2 class="text-lg"><i class="icofont-phone-circle text-lg"></i>+23 345 67980</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-6 col-md-10 ">
-                <div class="appoinment-wrap mt-5 mt-lg-0">
-                    <h2 class="mb-2 title-color">Book appoinment</h2>
-                    <p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.</p>
-                    <form id="#" class="appoinment-form" method="post" action="#">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <select class="form-control" id="exampleFormControlSelect1">
-                                        <option>Choose Department</option>
-                                        <option>Software Design</option>
-                                        <option>Development cycle</option>
-                                        <option>Software Development</option>
-                                        <option>Maintenance</option>
-                                        <option>Process Query</option>
-                                        <option>Cost and Duration</option>
-                                        <option>Modal Delivery</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <select class="form-control" id="exampleFormControlSelect2">
-                                        <option>Select Doctors</option>
-                                        <option>Software Design</option>
-                                        <option>Development cycle</option>
-                                        <option>Software Development</option>
-                                        <option>Maintenance</option>
-                                        <option>Process Query</option>
-                                        <option>Cost and Duration</option>
-                                        <option>Modal Delivery</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input name="date" id="date" type="text" class="form-control" placeholder="dd/mm/yyyy">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input name="time" id="time" type="text" class="form-control" placeholder="Time">
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input name="name" id="name" type="text" class="form-control" placeholder="Full Name">
-                                </div>
-                            </div>
-
-                            <div class="col-lg-6">
-                                <div class="form-group">
-                                    <input name="phone" id="phone" type="Number" class="form-control" placeholder="Phone Number">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group-2 mb-4">
-                            <textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Message"></textarea>
-                        </div>
-
-                        <a class="btn btn-main btn-round-full" href="appoinment.html">Make Appoinment <i class="icofont-simple-right ml-2  "></i></a>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> -->
-<section class="section testimonial-2 ">
-    <div class="container gray-bg">
-        <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <div class="section-title text-center">
                     <h2>Pengaduan Masuk</h2>
                     <div class="divider mx-auto my-4"></div>
-                    <!-- <p>Lets know moreel necessitatibus dolor asperiores illum possimus sint voluptates incidunt molestias nostrum laudantium. Maiores porro cumque quaerat.</p> -->
+                    <p></p>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container gray-bg">
-        <div class="row align-items-center">
-            <div class="col-lg-12 testimonial-wrap-2">
-                <div class="testimonial-block style-2  gray-bg">
-                    <i class="icofont-quote-right"></i>
-
-                    <div class="testimonial-thumb">
-                        <img src="images/team/test-thumb1.jpg" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="client-info ">
-                        <h4>Amazing service!</h4>
-                        <span>John Partho</span>
-                        <p>
-                            They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-                        </p>
+        <div class="row">
+            <?php foreach ($pengaduan as $aduan) : ?>
+                <div class="col-lg-4 col-md-6 col-sm-6">
+                    <div class="service-item mb-4">
+                        <div class="icon d-flex align-items-center">
+                            <img src="<?php echo base_url() ?>assets/template/images/form-user.png" alt="" class="img-fluid">
+                            <!-- <h4 class="mt-3 mb-3">Laboratory services</h4> -->
+                        </div>
+                        <div class="content">
+                            <b>Lokasi : </b><?= $aduan->lokasi ?>
+                            <p class="mb-4"><?= $aduan->isi ?></p>
+                        </div>
                     </div>
                 </div>
-
-                <div class="testimonial-block style-2  gray-bg">
-                    <div class="testimonial-thumb">
-                        <img src="images/team/test-thumb2.jpg" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="client-info">
-                        <h4>Expert doctors!</h4>
-                        <span>Mullar Sarth</span>
-                        <p>
-                            They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-                        </p>
-                    </div>
-
-                    <i class="icofont-quote-right"></i>
-                </div>
-
-                <div class="testimonial-block style-2  gray-bg">
-                    <div class="testimonial-thumb">
-                        <img src="images/team/test-thumb3.jpg" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="client-info">
-                        <h4>Good Support!</h4>
-                        <span>Kolis Mullar</span>
-                        <p>
-                            They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-                        </p>
-                    </div>
-
-                    <i class="icofont-quote-right"></i>
-                </div>
-
-                <div class="testimonial-block style-2  gray-bg">
-                    <div class="testimonial-thumb">
-                        <img src="images/team/test-thumb4.jpg" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="client-info">
-                        <h4>Nice Environment!</h4>
-                        <span>Partho Sarothi</span>
-                        <p class="mt-4">
-                            They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-                        </p>
-                    </div>
-                    <i class="icofont-quote-right"></i>
-                </div>
-
-                <div class="testimonial-block style-2  gray-bg">
-                    <div class="testimonial-thumb">
-                        <img src="images/team/test-thumb1.jpg" alt="" class="img-fluid">
-                    </div>
-
-                    <div class="client-info">
-                        <h4>Modern Service!</h4>
-                        <span>Kolis Mullar</span>
-                        <p>
-                            They provide great service facilty consectetur adipisicing elit. Itaque rem, praesentium, iure, ipsum magnam deleniti a vel eos adipisci suscipit fugit placeat.
-                        </p>
-                    </div>
-                    <i class="icofont-quote-right"></i>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>
+
+
 <!-- <section class="section clients">
     <div class="container">
         <div class="row justify-content-center">

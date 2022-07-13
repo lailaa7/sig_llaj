@@ -8,48 +8,66 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="card gradient-1">
                     <div class="card-body">
-                        <h3 class="card-title text-white">DATA LLAJ</h3>
+                        <h3 class="card-title text-white">DATA CCTV</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">4565</h2>
-                            <p class="text-white mb-0">Jan - March 2019</p>
+                            <h2 class="text-white"><?= $data_cctv ?></h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-shopping-cart"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-camera"></i></span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card gradient-2">
                     <div class="card-body">
-                        <h3 class="card-title text-white">PENGADUAN MASUK</h3>
+                        <h3 class="card-title text-white">Data Halte</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">8541</h2>
-                            <p class="text-white mb-0">Jan - March 2019</p>
+                            <h2 class="text-white"><?= $data_halte ?></h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-money"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-bus"></i></span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card gradient-4">
                     <div class="card-body">
-                        <h3 class="card-title text-white">PENGADUAN SELESAI</h3>
+                        <h3 class="card-title text-white">Data Parkir</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">99%</h2>
-                            <p class="text-white mb-0">Jan - March 2019</p>
+                            <h2 class="text-white"><?= $data_parkir ?></h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-heart"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-parking"></i></span>
                     </div>
                 </div>
             </div>
             <div class="col-lg-3 col-sm-6">
                 <div class="card gradient-3">
                     <div class="card-body">
-                        <h3 class="card-title text-white">LAPORAN</h3>
+                        <h3 class="card-title text-white">Data Stasiun</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white">4565</h2>
-                            <p class="text-white mb-0">Jan - March 2019</p>
+                            <h2 class="text-white"><?= $data_stasiun ?></h2>
                         </div>
-                        <span class="float-right display-5 opacity-5"><i class="fa fa-users"></i></span>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-bus"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card gradient-3">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Data Terminal</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white"><?= $data_terminal ?></h2>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-train"></i></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6">
+                <div class="card gradient-3">
+                    <div class="card-body">
+                        <h3 class="card-title text-white">Speed Bump</h3>
+                        <div class="d-inline-block">
+                            <h2 class="text-white"><?= $speed_bump ?></h2>
+                        </div>
+                        <span class="float-right display-5 opacity-5"><i class="fa fa-bump"></i></span>
                     </div>
                 </div>
             </div>
@@ -221,7 +239,7 @@
 
         </div> -->
 
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-lg-12">
                 <div class="card">
                     <div class="card-body">
@@ -350,7 +368,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <div class="row">
             <!-- <div class="col-xl-3 col-lg-6 col-sm-6 col-xxl-6">
@@ -449,7 +467,7 @@
                     </div>
                 </div>
             </div> -->
-             
+
         </div>
 
 

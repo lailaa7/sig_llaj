@@ -2,9 +2,9 @@
             Footer start
         ***********************************-->
       <div class="footer">
-          <div class="copyright">
-              <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
-          </div>
+        <div class="copyright">
+          <p>Copyright &copy; Designed & Developed by <a href="https://themeforest.net/user/quixlab">Quixlab</a> 2018</p>
+        </div>
       </div>
       <!--**********************************
             Footer end
@@ -52,7 +52,10 @@
       <script src="<?= base_url() ?>assets/admin/./plugins/tables/js/jquery.dataTables.min.js"></script>
       <script src="<?= base_url() ?>assets/admin/./plugins/tables/js/datatable/dataTables.bootstrap4.min.js"></script>
       <script src="<?= base_url() ?>assets/admin/./plugins/tables/js/datatable-init/datatable-basic.min.js"></script>
-
+      <!-- sweet alert -->
+      <script src="<?= base_url() ?>assets/admin/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
+      <!-- <script src="<?= base_url() ?>assets/admin/plugins/sweetalert/dist/sweetalert.init.js"></script> -->
+      <script src="<?= base_url() ?>assets/admin/js/mysweetalerts.js"></script>
       <script src="https://kit.fontawesome.com/9628c2592e.js" crossorigin="anonymous"></script>
       </body>
 

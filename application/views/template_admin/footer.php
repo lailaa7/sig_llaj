@@ -57,8 +57,7 @@
       <script src="https://kit.fontawesome.com/9628c2592e.js" crossorigin="anonymous"></script>
 
       <!-- sweet alert -->
-      <script src="<?= base_url() ?>assets/admin/plugins/sweetalert2/dist/sweetalert2.min.js"></script>
-      <!-- <script src="<?= base_url() ?>assets/admin/plugins/sweetalert/dist/sweetalert.init.js"></script> -->
+      <script src="<?= base_url() ?>assets/admin/plugins/sweetalert2/dist/sweetalert2.min.js"></script> -->
       <script src="<?= base_url() ?>assets/admin/js/mysweetalerts.js"></script>
 
 

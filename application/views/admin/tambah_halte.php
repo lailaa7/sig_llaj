@@ -26,11 +26,11 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="form-group">
-                                    <label class="control-label">Nama Jalan</label>
-                                    <input type="text" name="nama_jalan" class="form-control" placeholder="">
+                                    <label class="control-label">Nama Halte</label>
+                                    <input type="text" name="nama_halte" class="form-control" placeholder="">
 
                                     <div class="text-danger">
-                                        <?php echo form_error('nama_jalan'); ?>
+                                        <?php echo form_error('nama_halte'); ?>
                                     </div>
                                 </div>
 

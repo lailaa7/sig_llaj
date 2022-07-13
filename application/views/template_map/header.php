@@ -1,9 +1,10 @@
 <html>
+
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="description" content="Orbitor,business,company,agency,modern,bootstrap4,tech,software">
     <meta name="author" content="themefisher.com">
-
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Sistem Informasi LLAJ</title>
 
     <!-- Favicon -->
@@ -24,26 +25,31 @@
     <link href="<?= base_url() ?>assets/admin/./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <!-- kebutuhan maps -->
-    <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
-    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
-    <link rel="stylesheet" href="<?=base_url("assets/leaflet/map/styledLayerControl.css")?>" />
-    <script src="<?=base_url("assets/leaflet/map/styledLayerControl.js")?>"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.8.0/leaflet.js"></script>
+    <link rel="stylesheet" href="https://sig-llaj.rocky-techno.com/assets/leaflet/map/styledLayerControl.css" />
+    <script src="https://sig-llaj.rocky-techno.com/assets/leaflet/map/styledLayerControl.js"></script>
+    <link rel="stylesheet" href="<?= base_url("assets/leaflet/map/styledLayerControl.css") ?>" />
+    <script src="<?= base_url("assets/leaflet/map/styledLayerControl.js") ?>"></script>
     <script src="http://maps.google.com/maps/api/js?v=3.2&sensor=false&key=AIzaSyDeqZIQXFKMXqYccaxFFHtsxlhafvRFeQ4"></script>
-    <script src="https://raruto.github.io/cdn/leaflet-google/0.0.3/leaflet-google.js"></script>
-    <script src="<?php echo base_url("assets/leaflet/map/Bing.js")?>"></script>
-            
+    <script src="http://raruto.github.io/cdn/leaflet-google/0.0.3/leaflet-google.js"></script>
+    <script src="<?php echo base_url("assets/leaflet/map/Bing.js") ?>"></script>
+
     <style>
         #map {
-            width:100%;
-            height:100%;
+            width: 100%;
+            height: 100%;
         }
-        .leaflet-google-layer{
+
+        .leaflet-google-layer {
             z-index: 0;
         }
-        .leaflet-map-pane{
+
+        .leaflet-map-pane {
             z-index: 100;
         }
     </style>
 
 </head>
+
 <body id="top">

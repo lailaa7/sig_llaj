@@ -54,7 +54,7 @@ class Tambah_cctv extends CI_Controller
             array('required' => '%s tidak boleh kosong')
         );
         $this->form_validation->set_rules(
-            'lokasi',
+            'lokasi', 
             '',
             'required',
             array('required' => 'Tidak boleh kosong')
@@ -62,12 +62,6 @@ class Tambah_cctv extends CI_Controller
         $this->form_validation->set_rules(
             'jumlah',
             'Jumlah',
-            'required',
-            array('required' => '%s tidak boleh kosong')
-        );
-        $this->form_validation->set_rules(
-            'kondisi',
-            'Kondisi',
             'required',
             array('required' => '%s tidak boleh kosong')
         );
@@ -109,7 +103,7 @@ class Tambah_cctv extends CI_Controller
                 'longitude'           =>  $this->input->post('longitude')
             );
 
-            $this->model_cctv->tambah_data($data, 'data_cctv');
+            $this->model_cctv->Tambah_data($data, 'data_cctv');
             $this->session->set_flashdata('flashdata', 'Menambah');
             redirect('admin/cctv_admin');
         }

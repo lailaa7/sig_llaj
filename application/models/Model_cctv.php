@@ -34,7 +34,7 @@ class Model_cctv extends CI_Model
 
     public function Detail_data($id = NULL)
     {
-        $query = $this->db->get_where('data_cctv', array('ic_cctv' => $id))->row();
+        $query = $this->db->get_where('data_cctv', array('id_cctv' => $id))->row();
         return $query;
     }
 }

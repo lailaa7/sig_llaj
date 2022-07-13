@@ -10,6 +10,7 @@ class Peta extends CI_Controller
         $data['data_parkir'] = $this->db->get('data_parkir')->result_array();
         $data['data_stasiun'] = $this->db->get('data_stasiun')->result_array();
         $data['data_terminal'] = $this->db->get('data_terminal')->result_array();
+        $data['speed_bump'] = $this->db->get('speed_bump')->result_array();
 
         $this->load->view('template_map/header');
         $this->load->view('template_map/navbar');

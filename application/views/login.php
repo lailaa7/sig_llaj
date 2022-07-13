@@ -7,7 +7,6 @@
 </head>
 
 <div class="login-form-bg h-100" style="background: #223a66;">
-
     <div class="container h-100">
         <div class="row justify-content-center h-100">
             <div class="col-xl-8">
@@ -22,9 +21,9 @@
                             <div class="col-md-5 py-5">
 
                                 <a class="text-center">
-                                    <h4>LOGIN</h4>
+                                    <h4>Masuk</h4>
                                 </a>
-
+                                <?= $this->session->flashdata('pesan'); ?>
                                 <form action="<?php echo base_url() . 'auth/proses_login' ?>" method="POST" enctype="multipart/form-data" class="mt-5 mb-5 login-input">
                                     <div class="form-group">
                                         <input type="text" name="username" class="form-control" placeholder="Username">

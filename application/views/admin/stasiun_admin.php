@@ -25,7 +25,7 @@
                                         <td><?php echo $sta->longitude ?></td>
                                         <td><?php echo $sta->latitude ?></td>
                                         <td>
-                                            <a href="<?php echo base_url('admin/Stasiun_admin/Edit_stasiun/' . $sta->id_stasiun,)
+                                            <a href="<?php echo base_url('admin/Stasiun_admin/Edit/' . $sta->id_stasiun,)
                                                         ?>" class="btn btn-circle btn-primary btn-small">
                                                 <i class="fa fa-edit"></i>
                                             </a>
@@ -35,10 +35,10 @@
                                                 <i class="fa-solid fa-trash"></i>
                                             </a>
 
-                                            <a href="<?php echo base_url('admin/Stasiun_admin/Detail_stasiun/' . $sta->id_stasiun,)
-                                                        ?>" class="btn btn-circle btn-info btn-small">
+                                            <!-- <a href="<?php echo base_url('admin/Stasiun_admin/Detail_stasiun/' . $sta->id_stasiun,)
+                                                            ?>" class="btn btn-circle btn-info btn-small">
                                                 <i class="fa fa-eye"></i>
-                                            </a>
+                                            </a> -->
                                         </td>
                                     </tr>
                                 <?php endforeach; ?>

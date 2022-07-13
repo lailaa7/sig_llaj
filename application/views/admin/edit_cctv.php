@@ -7,8 +7,7 @@
                 <div class="basic-form">
                     <form action="<?php echo base_url() . 'admin/Cctv_admin/update/'. $this->uri->segment(4) ?>" method="POST" enctype="multipart/form-data">
                         <div class="row">
-                            
-                            <?php foreach ($data_cctv as $cctv) ?>
+                            <?php foreach ($data_cctv as $cctv) ?> 
                             <div class="col-lg-6">
                                 <div class="form-group">
                                     <label class="control-label">ID Data</label>
