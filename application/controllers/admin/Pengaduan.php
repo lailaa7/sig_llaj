@@ -19,7 +19,7 @@ class Pengaduan extends CI_Controller
     public function index()
     {
 
-        $data['pengaduan'] = $this->model_pengaduan->tampil_data()->result_array();
+        $data['pengaduan'] = $this->Model_pengaduan->tampil_data()->result_array();
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
         $this->load->view('admin/pengaduan', $data);
@@ -38,9 +38,9 @@ class Pengaduan extends CI_Controller
         $nourut = $this->formatNbr($baru);
         $data['id'] = 'Pr' . $nourut;
 
-        $this->load->model('model_pengaduan');
-        $data['detail'] = $this->model_pengaduan->detail_data($id);
-        $data['detail']->status_proses = $this->model_pengaduan->get_status($data['detail']->no_tiket);
+        $this->load->Model('Model_pengaduan');
+        $data['detail'] = $this->Model_pengaduan->detail_data($id);
+        $data['detail']->status_proses = $this->Model_pengaduan->get_status($data['detail']->no_tiket);
         // echo json_encode($data['detail']);
         // exit;
         $this->load->view('template_admin/header');
@@ -66,7 +66,7 @@ class Pengaduan extends CI_Controller
             );
             $this->db->where('no_tiket', $this->input->post('no_tiket'));
             $this->db->update('pengaduan', $status);
-            $this->model_pengaduan->tambah_data($data, 'proses_pengaduan');
+            $this->Model_pengaduan->tambah_data($data, 'proses_pengaduan');
         } elseif ($type == 2) {
             $data = array(
                 'id_proses' => $this->input->post('id_proses'),
@@ -79,7 +79,7 @@ class Pengaduan extends CI_Controller
             );
             $this->db->where('no_tiket', $this->input->post('no_tiket'));
             $this->db->update('pengaduan', $status);
-            $this->model_pengaduan->tambah_data($data, 'proses_pengaduan');
+            $this->Model_pengaduan->tambah_data($data, 'proses_pengaduan');
         }
         redirect('admin/pengaduan');
     }

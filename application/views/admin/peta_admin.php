@@ -125,7 +125,5 @@
         var simpan_geojson_provinsi_indonesia = L.geoJson(geojson_madiun_kota)
         simpan_geojson_provinsi_indonesia.addTo(map);
     <?php endforeach; ?>
-    <?php foreach ($data_lokasi as $key => $val) : ?>
-        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).bindPopup("data").addTo(map);
-    <?php endforeach; ?>
+    
 </script>

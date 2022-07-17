@@ -108,10 +108,7 @@
         </div>
     </div>
 </div>
-<?php
-$key['longitude']   = '111.52210236294196';
-$key['latitude']    = '-7.617912873115704';
-?>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     $("#kategori").change(function() {
@@ -130,6 +127,10 @@ $key['latitude']    = '-7.617912873115704';
         }
     })
 </script>
+<?php
+$key['longitude']   = '111.52210236294196';
+$key['latitude']    = '-7.617912873115704';
+?>
 <script>
     var key = 'pk.87f2d9fcb4fdd8da1d647b46a997c727';
 

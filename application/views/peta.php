@@ -34,10 +34,7 @@
         type: 'Road'
     });
 
-    var data_lokasi = new L.LayerGroup();
-    <?php foreach ($data_lokasi as $key => $val) : ?>
-        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).addTo(data_lokasi);
-    <?php endforeach; ?>
+    
 
     var map = L.map('map', {
         center: [-7.617912873115704, 111.52210236294196],

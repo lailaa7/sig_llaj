@@ -1,3 +1,14 @@
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/geojson_madiun_kota.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/geojson_kecamatan_indonesia.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/leaflet_search.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
+<link rel="stylesheet" href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+<script type="text/javascript" src="https://tiles.unwiredlabs.com/js/leaflet-unwired.js?v=1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.min.js"></script>
+<script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
+
 <div class="container">
     <div class="card mb-3 mt-3  text-dark">
         <div class="card-header">
@@ -5,70 +16,92 @@
                 <h4>Form Pengaduan</h4>
             </div>
         </div>
-        <div class="card-body">
-            <form action="<?php echo base_url() . '/Pengaduan/tambah_pengaduan' ?>" method="POST" enctype="multipart/form-data">
-                <div class="row">
-                    <div class="col-lg-6 px-3">
-                        <div class="form-group">
-                            <label class="control-label txt-left">Nama</label>
-                            <input name="nama_pengirim" id="name" type="text" class="form-control" value="<?php $data ?>">
-                            <div class="text-danger">
-                                <?php echo form_error('nama_pengirim'); ?>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <div class="car-body pt-3 px-3">
+                    <div class="form-validation">
+                        <form action="<?php echo base_url() . '/Pengaduan/tambah_pengaduan' ?>" method="POST" enctype="multipart/form-data">
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Nama <span class="text-danger">*</span> </label>
+                                <div class="col-lg-8">
+                                    <input name="nama_pengirim" id="name" type="text" class="form-control" value="">
+                                    <span class="text-danger">
+                                        <?php echo form_error('nama_pengirim'); ?>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 px-3">
-                        <div class="form-group">
-                            <label class="control-label txt-left">No Telepon</label>
-                            <input name="no_telp" id="no_telp" type="number" class="form-control">
-                            <div class="text-danger">
-                                <?php echo form_error('no_telp'); ?>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">No Telepon<span class="text-danger">*</span></label>
+                                <div class="col-lg-8">
+                                    <input name="no_telp" id="no_telp" type="number" class="form-control">
+                                    <span class="text-danger">
+                                        <?php echo form_error('no_telp'); ?>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-6 px-3">
-                        <div class="form-group">
-                            <label class="control-label txt-left">Bukti Pengaduan</label>
-                            <input name="bukti" id="bukti" type="file" class="form-control" accept="image/*">
-                            <div class="text-danger">
-                                <?php
-                                echo $this->session->flashdata('gambar') ?>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Bukti Pengaduan<span class="text-danger">*</span></label>
+                                <div class="col-lg-8">
+                                    <input name="bukti" id="bukti" type="file" class="form-control" accept="image/*">
+                                    <span class="text-danger">
+                                        <?php echo form_error('bukti'); ?>
+                                        <?php
+                                        echo $this->session->flashdata('gambar') ?>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 px-3">
-                        <div class="form-group">
-                            <label class="control-label txt-left">Deskripsi Pengaduan</label>
-                            <textarea name="isi" id="deskripsi" type="text" class="form-control"></textarea>
-                            <div class="text-danger">
-                                <?php echo form_error('isi'); ?>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Deskripsi Pengaduan<span class="text-danger">*</span></label>
+                                <div class="col-lg-8">
+                                    <textarea name="isi" id="deskripsi" type="text" class="form-control"></textarea>
+                                    <span class="text-danger">
+                                        <?php echo form_error('isi'); ?>
+                                    </span>
+                                </div>
                             </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Deskripsi Lokasi<span class="text-danger">*</span></label>
+                                <div class="col-lg-8">
+                                    <input name="lokasi" id="lokasi" type="text" class="form-control">
+                                    <span class="text-danger">
+                                        <?php echo form_error('lokasi'); ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label">Koordinat<span class="text-danger">*</span></label>
+                                <div class="col-lg-8">
+                                    <input name="latitude" id="latitude" type="text" class="form-control">
+                                    <span class="text-danger">
+                                        <?php echo form_error('latitude'); ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <label class="col-lg-4 col-form-label"></label>
+                                <div class="col-lg-8">
+                                    <input name="longitude" id="longitude" type="text" class="form-control">
+                                    <span class="text-danger">
+                                        <?php echo form_error('longitude'); ?>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <div class="leaflet-map" id="map" style="width: 100%; height:500px;"></div>
+                            </div>
+                            <div class="row mt-3 mb-3">
+                                <div class="col-lg-12 text-right">
+                                    <button type="submit" class="btn btn-rounded btn-primary">Kirim</button>
+                                </div>
+                            </div>
 
-                    <div class="col-lg-6 px-3">
-                        <div class="form-group">
-                            <label class="control-label txt-left">Deskripsi Lokasi</label>
-                            <input name="lokasi" id="lokasi" type="text" class="form-control">
-                            <div class="text-danger">
-                                <?php echo form_error('lokasi'); ?>
-                            </div>
-                        </div>
+                        </form>
                     </div>
                 </div>
-                <div class=" row">
-                    <div class="col-lg-12 text-right">
-                        <button type="submit" class="btn btn-primary">Kirim</button>
-                    </div>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
-    <div class="card mb-3 mt-3  text-dark">
+    <div class="card mb-4 mt-4  text-dark">
         <div class=" mb-3 mt-5 px-3 py-2">
             <form action="<?= base_url('pengaduan/DetailPengaduan') ?>" method="POST" enctype="multipart/form-data">
                 <div class="row">
@@ -86,3 +119,99 @@
         </div>
     </div>
 </div>
+
+<?php
+$key['longitude']   = '111.52210236294196';
+$key['latitude']    = '-7.617912873115704';
+?>
+<script>
+    var key = 'pk.87f2d9fcb4fdd8da1d647b46a997c727';
+
+    var mark;
+    // Initial map view
+    var INITIAL_LNG = <?= $key['longitude'] ?>;
+    var INITIAL_LAT = <?= $key['latitude'] ?>;
+
+    // Change the initial view if there is a GeoIP lookup
+    if (typeof Geo === 'object') {
+        INITIAL_LNG = Geo.lon;
+        INITIAL_LAT = Geo.lat;
+    }
+    // Add layers that we need to the map
+    var streets = L.tileLayer.Unwired({
+        key: key,
+        scheme: "streets"
+    });
+    var earth = L.tileLayer.Unwired({
+        key: key,
+        scheme: "earth"
+    });
+    var hybrid = L.tileLayer.Unwired({
+        key: key,
+        scheme: "hybrid"
+    });
+
+    var map = L.map('map', {
+        scrollWheelZoom: (window.self === window.top) ? true : false,
+        dragging: (window.self !== window.top && L.Browser.touch) ? false : true,
+        layers: [streets],
+        tap: (window.self !== window.top && L.Browser.touch) ? false : true,
+    }).setView({
+        lng: INITIAL_LNG,
+        lat: INITIAL_LAT
+    }, 13);
+    var hash = new L.Hash(map);
+
+    //   L.control.zoom({
+    //       position:'topright'
+    //   }).addTo(map);
+
+    // Add the 'layers' control
+    L.control.layers({
+        "Streets": streets,
+        "Earth": earth,
+        "Hybrid": hybrid,
+    }, null, {
+        position: "topright"
+    }).addTo(map);
+    // Add the 'scale' control
+    L.control.scale().addTo(map);
+
+    // Add geocoder
+    var geocoder = L.control.geocoder(key, {
+        fullWidth: 650,
+        expanded: true,
+        markers: true,
+        url: 'https://api.locationiq.com/v1',
+    }).addTo(map);
+
+    // Re-sort control order so that geocoder is on top
+    var geocoderEl = geocoder._container;
+    geocoderEl.parentNode.insertBefore(geocoderEl, geocoderEl.parentNode.childNodes[0]);
+
+    // Focus to geocoder input
+    geocoder.focus();
+
+    var latInput = document.querySelector("[name=latitude]");
+    var lngInput = document.querySelector("[name=longitude]");
+
+    function onMapClicktambah(e) {
+        var lat = e.latlng.lat;
+        var lng = e.latlng.lng;
+        if (!mark) {
+            mark = L.marker(e.latlng).addTo(map);
+        } else {
+            mark.setLatLng(e.latlng);
+        }
+        console.log(e.latlng);
+
+        latInput.value = lat;
+        lngInput.value = lng;
+    }
+    map.on('click', onMapClicktambah);
+
+    // Adding a script block to post message to the parent container (think iframed demos)
+    window.addEventListener('hashchange', function() {
+        parent.postMessage(window.location.hash, '*')
+    });
+</script>

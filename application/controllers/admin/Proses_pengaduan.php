@@ -5,7 +5,7 @@ class Proses_pengaduan extends CI_Controller
 
     public function index()
     {
-        $data['proses'] = $this->model_proses->join_tabel()->result_array();
+        $data['proses'] = $this->Model_proses->join_tabel()->result_array();
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
         $this->load->view('admin/proses_pengaduan', $data);
@@ -14,8 +14,8 @@ class Proses_pengaduan extends CI_Controller
 
     public function proses($id)
     {
-        $this->load->model('model_pengaduan');
-        $data['tambah'] = $this->model_proses->detail_data($id);
+        $this->load->Model('Model_pengaduan');
+        $data['tambah'] = $this->Model_proses->detail_data($id);
 
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
@@ -48,7 +48,7 @@ class Proses_pengaduan extends CI_Controller
                 'no_tiket' => $this->input->post('no_tiket')
             );
 
-            $this->model_proses->update_data($where, $data, 'proses_pengaduan');
+            $this->Model_proses->update_data($where, $data, 'proses_pengaduan');
             redirect('admin/proses_pengaduan/index/' . $this->input->post('no_tiket'));
         }
     }
@@ -78,7 +78,7 @@ class Proses_pengaduan extends CI_Controller
                 'no_tiket' => $this->input->post('no_tiket')
             );
 
-            $this->model_proses->update_data($where, $data, 'proses_pengaduan');
+            $this->Model_proses->update_data($where, $data, 'proses_pengaduan');
             redirect('admin/proses_pengaduan/index/' . $this->input->post('no_tiket'));
         }
     }
@@ -109,7 +109,7 @@ class Proses_pengaduan extends CI_Controller
                 'no_tiket' => $this->input->post('no_tiket')
             );
 
-            $this->model_proses->update_data($where, $data, 'proses_pengaduan');
+            $this->Model_proses->update_data($where, $data, 'proses_pengaduan');
             redirect('admin/proses_pengaduan/index/' . $this->input->post('no_tiket'));
         }
     }
