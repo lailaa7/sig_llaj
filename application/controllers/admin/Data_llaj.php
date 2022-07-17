@@ -56,10 +56,12 @@ class Data_llaj extends CI_Controller
                 'nama_jalan'           =>  $this->input->post('nama_jalan'),
                 'simpang'           =>  $this->input->post('simpang'),
                 'id_kategori'           =>  $this->input->post('kategori'),
+                'kategori'          => $this->db->get_where('kategori', array('id_kategori' =>  $this->input->post('kategori')))->row()->nama_kategori,
                 'latitude'           =>  $this->input->post('latitude'),
                 'longitude'           =>  $this->input->post('longitude'),
             );
-
+            // var_dump($data);
+            // die;
             $this->Model_data->Tambah_data($data, 'data_llaj');
             $this->session->set_flashdata('flashdata', 'Menambah');
             redirect('admin/data_llaj');
@@ -69,10 +71,12 @@ class Data_llaj extends CI_Controller
                 'nama_jalan'           =>  $this->input->post('nama_jalan'),
                 'lokasi'           =>  $this->input->post('lokasi'),
                 'id_kategori'           =>  $this->input->post('kategori'),
+                'kategori'          => $this->db->get_where('kategori', array('id_kategori' =>  $this->input->post('kategori')))->row()->nama_kategori,
                 'latitude'           =>  $this->input->post('latitude'),
                 'longitude'           =>  $this->input->post('longitude'),
             );
-
+            // var_dump($data);
+            // die;
             $this->Model_data->Tambah_data($data, 'data_llaj');
             $this->session->set_flashdata('flashdata', 'Menambah');
             redirect('admin/data_llaj');

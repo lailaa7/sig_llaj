@@ -38,7 +38,7 @@
                                     <?php foreach ($data as $dt) : ?>
                                         <tr>
                                             <td><?php echo $dt->id_data ?></td>
-                                            <td><?php echo $dt->id_kategori ?></td>
+                                            <td><?php echo $dt->kategori ?></td>
                                             <td><?php echo $dt->nama_jalan ?></td>
                                             <td>
                                                 <a href="<?php echo base_url('admin/Data_llaj/Edit_data/' . $dt->id_data,)

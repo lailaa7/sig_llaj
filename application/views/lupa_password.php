@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-md-6 py-4 px-3">
                             <div class="auth-form">
-                                <h4 class="text-center text-color mb-4"><strong>Masuk</strong></h4>
+                                <h4 class="text-center text-color mb-4"><strong>Lupa Password</strong></h4>
                                 <?= $this->session->flashdata('pesan'); ?>
                                 <form action="<?php echo base_url() . 'auth/proses_login' ?>" method="POST">
                                     <div class="form-group">
@@ -28,8 +28,11 @@
                                     <div class="form-group">
                                         <input type="password" name="password" class="form-control" placeholder="Password">
                                     </div>
+                                    <div class="form-group">
+                                        <input type="password" name="password" class="form-control" placeholder="Konfirmasi  Password">
+                                    </div>
                                     <div class="text-center">
-                                        <button name="login" class="btn login-form__btn submit w-100">Masuk</button>
+                                        <button name="login" class="btn login-form__btn submit w-100">Simpan</button>
                                     </div>
                                     <div class="text-color text-center  mt-2">
                                         <a href="<?php echo base_url('Auth/forget') ?>">

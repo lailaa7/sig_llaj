@@ -1,4 +1,6 @@
-
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/geojson_madiun_kota.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/geojson_kecamatan_indonesia.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/leaflet_search.js"></script>
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
 <link rel="stylesheet" href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
@@ -26,19 +28,17 @@
                 </div>
                 <div class="card-body">
                     <div class="basic-form mb-3">
-                        <form>
+                        <form action="" method="POST">
                             <div class="form-row">
                                 <div class="col-3">
-                                    <label class="col-form-label">Longitude</label>
-                                    <input type="text" class="form-control input-rounded" placeholder="Longitude">
-                                </div>
-                                <div class="col-3">
-                                    <label class=" col-form-label">Latitude</label>
-                                    <input type="text" class="form-control input-rounded" placeholder="Latitude">
-                                </div>
-                                <div class="col-3">
-                                    <label class="col-form-label">Ketinggian</label>
-                                    <input type="text" class="form-control input-rounded" placeholder="Ketinggian">
+                                    <label class="col-form-label">Kategori</label>
+                                    <select id="inputState" class="form-control input-rounded">
+                                        <option selected="selected">Pilih Kategori</option>
+                                        <?php foreach ($kategori as $ktg) : ?>
+                                            <option value="<?php echo $ktg->id_kategori ?>"><?php echo $ktg->nama_kategori ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                    <!-- <input type="text" class="form-control input-rounded" name="longitude" value="" placeholder="Longitude"> -->
                                 </div>
                                 <div class="col-3 pt-4 mt-3">
                                     <button type="submit" class="btn mb-1 btn-rounded btn-dark mb-2">Simpan</button>
@@ -46,122 +46,86 @@
                             </div>
                         </form>
                     </div>
+                    <div class="basic-form mb-3">
+                        <?php foreach ($data_lokasi as $key) : ?>
+                            <form action="" method="POST">
+                                <div class="form-row">
+                                    <div class="col-3">
+                                        <label class="col-form-label">Longitude</label>
+                                        <input type="text" class="form-control input-rounded" name="longitude" value="<?= $key['longitude'] ?>" placeholder="Longitude">
+                                    </div>
+                                    <div class="col-3">
+                                        <label class=" col-form-label">Latitude</label>
+                                        <input type="text" class="form-control input-rounded" name="langitude" value="<?= $key['latitude'] ?>" placeholder="Latitude">
+                                    </div>
+                                    <div class="col-3">
+                                        <label class="col-form-label">Ketinggian</label>
+                                        <input type="text" class="form-control input-rounded" name value="<?= $key['ketinggian'] ?>" placeholder="Ketinggian">
+                                    </div>
+                                    <div class="col-3 pt-4 mt-3">
+                                        <button type="submit" class="btn mb-1 btn-rounded btn-dark mb-2">Edit Peta</button>
+                                    </div>
+                                </div>
+                            </form>
+                        <?php endforeach; ?>
+                    </div>
+
                     <div class="leaflet-map" id="map" style="width: 100%; height:500px;"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<?php
-$key['longitude']   = '111.52210236294196';
-$key['latitude']    = '-7.617912873115704';
-?>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
-    $("#kategori").change(function() {
+    <?php foreach ($data_lokasi as $key) : ?>
+        var key = 'pk.87f2d9fcb4fdd8da1d647b46a997c727';
 
-        var selected_option = $(this).val();
-        console.log(selected_option);
-        if (selected_option == 'KTG001') {
-            $(".jumlah").removeAttr('hidden');
-            $(".simpang").removeAttr('hidden');
-            $(".lokasi").attr('hidden', true);
-        } else {
-            $(".jumlah").attr('hidden', true);
-            $(".simpang").attr('hidden', true);
-            $(".lokasi").removeAttr('hidden');
+        // Initial map view
+        var INITIAL_LNG = <?= $key['longitude'] ?>;
+        var INITIAL_LAT = <?= $key['latitude'] ?>;
 
+        // Change the initial view if there is a GeoIP lookup
+        if (typeof Geo === 'object') {
+            INITIAL_LNG = Geo.lon;
+            INITIAL_LAT = Geo.lat;
         }
-    })
-</script>
-<script>
-    var key = 'pk.87f2d9fcb4fdd8da1d647b46a997c727';
+        // Add layers that we need to the map
+        var streets = L.tileLayer.Unwired({
+            key: key,
+            scheme: "streets"
+        });
+        var earth = L.tileLayer.Unwired({
+            key: key,
+            scheme: "earth"
+        });
+        var hybrid = L.tileLayer.Unwired({
+            key: key,
+            scheme: "hybrid"
+        });
 
-    var mark;
-    // Initial map view
-    var INITIAL_LNG = <?= $key['longitude'] ?>;
-    var INITIAL_LAT = <?= $key['latitude'] ?>;
+        var map = L.map('map', {
+            scrollWheelZoom: (window.self === window.top) ? true : false,
+            dragging: (window.self !== window.top && L.Browser.touch) ? false : true,
+            layers: [streets],
+            tap: (window.self !== window.top && L.Browser.touch) ? false : true,
+        }).setView({
+            lng: INITIAL_LNG,
+            lat: INITIAL_LAT
+        }, 12);
+        var hash = new L.Hash(map);
 
-    // Change the initial view if there is a GeoIP lookup
-    if (typeof Geo === 'object') {
-        INITIAL_LNG = Geo.lon;
-        INITIAL_LAT = Geo.lat;
-    }
-    // Add layers that we need to the map
-    var streets = L.tileLayer.Unwired({
-        key: key,
-        scheme: "streets"
-    });
-    var earth = L.tileLayer.Unwired({
-        key: key,
-        scheme: "earth"
-    });
-    var hybrid = L.tileLayer.Unwired({
-        key: key,
-        scheme: "hybrid"
-    });
+        L.control.layers({
+            "Streets": streets,
+            "Earth": earth,
+            "Hybrid": hybrid,
+        }, null, {
+            position: "topright"
+        }).addTo(map);
 
-    var map = L.map('map', {
-        scrollWheelZoom: (window.self === window.top) ? true : false,
-        dragging: (window.self !== window.top && L.Browser.touch) ? false : true,
-        layers: [streets],
-        tap: (window.self !== window.top && L.Browser.touch) ? false : true,
-    }).setView({
-        lng: INITIAL_LNG,
-        lat: INITIAL_LAT
-    }, 13);
-    var hash = new L.Hash(map);
-
-    //   L.control.zoom({
-    //       position:'topright'
-    //   }).addTo(map);
-
-    // Add the 'layers' control
-    L.control.layers({
-        "Streets": streets,
-        "Earth": earth,
-        "Hybrid": hybrid,
-    }, null, {
-        position: "topright"
-    }).addTo(map);
-    // Add the 'scale' control
-    L.control.scale().addTo(map);
-
-    // Add geocoder
-    var geocoder = L.control.geocoder(key, {
-        fullWidth: 650,
-        expanded: true,
-        markers: true,
-        url: 'https://api.locationiq.com/v1',
-    }).addTo(map);
-
-    // Re-sort control order so that geocoder is on top
-    var geocoderEl = geocoder._container;
-    geocoderEl.parentNode.insertBefore(geocoderEl, geocoderEl.parentNode.childNodes[0]);
-
-    // Focus to geocoder input
-    geocoder.focus();
-
-    var latInput = document.querySelector("[name=latitude]");
-    var lngInput = document.querySelector("[name=longitude]");
-
-    function onMapClicktambah(e) {
-        var lat = e.latlng.lat;
-        var lng = e.latlng.lng;
-        if (!mark) {
-            mark = L.marker(e.latlng).addTo(map);
-        } else {
-            mark.setLatLng(e.latlng);
-        }
-        console.log(e.latlng);
-
-        latInput.value = lat;
-        lngInput.value = lng;
-    }
-    map.on('click', onMapClicktambah);
-
-    // Adding a script block to post message to the parent container (think iframed demos)
-    window.addEventListener('hashchange', function() {
-        parent.postMessage(window.location.hash, '*')
-    });
+        var simpan_geojson_provinsi_indonesia = L.geoJson(geojson_madiun_kota)
+        simpan_geojson_provinsi_indonesia.addTo(map);
+    <?php endforeach; ?>
+    <?php foreach ($data_lokasi as $key => $val) : ?>
+        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).bindPopup("data").addTo(map);
+    <?php endforeach; ?>
 </script>

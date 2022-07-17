@@ -66,4 +66,12 @@ class Auth extends CI_Controller
         $this->session->sess_destroy();
         redirect('Auth/login');
     }
+
+    public function forget()
+    {
+        // $this->load->view('template/header');
+        // $this->load->view('template/navbar');
+        $this->load->view('lupa_password');
+        // $this->load->view('template/footer');
+    }
 }
