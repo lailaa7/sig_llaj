@@ -18,9 +18,12 @@
     <!-- datable -->
     <link href="<?= base_url() ?>assets/admin/./plugins/tables/css/datatable/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- leaflet -->
-    <link href="<?= base_url() ?>assets/admin/leaflet/plugins/leaflet/leaflet.css" rel="stylesheet">
+    <!-- <link href="<?= base_url() ?>assets/admin/leaflet/plugins/leaflet/leaflet.css" rel="stylesheet"> -->
 
     <link href="<?= base_url() ?>assets/admin/plugins/sweetalert2/dist/sweetalert2.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
+    <link rel="stylesheet" href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
 
 </head>
 

@@ -34,94 +34,112 @@
         type: 'Road'
     });
 
-    var data_cctv = new L.LayerGroup();
-    <?php foreach ($data_cctv as $key => $val) : ?>
-        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).addTo(data_cctv);
-    <?php endforeach; ?>
+    // Sao Paulo Soybeans Plant
+    var soybeans_sp = new L.LayerGroup();
+    L.marker([-22, -49.80]).addTo(soybeans_sp),
+        L.marker([-23, -49.10]).addTo(soybeans_sp),
+        L.marker([-21, -49.50]).addTo(soybeans_sp);
 
-    var data_parkir = new L.LayerGroup();
-    <?php foreach ($data_parkir as $key => $val) : ?>
-        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).addTo(data_parkir);
-    <?php endforeach; ?>
+    // Sao Paulo Corn Plant
+    var corn_sp = new L.LayerGroup();
+    L.marker([-22, -48.10]).addTo(corn_sp),
+        L.marker([-21, -48.60]).addTo(corn_sp);
 
-    var data_halte = new L.LayerGroup();
-    <?php foreach ($data_halte as $key => $val) : ?>
-        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).addTo(data_halte);
-    <?php endforeach; ?>
+    // Rio de Janeiro Bean Plant
+    var bean_rj = new L.LayerGroup();
+    L.marker([-22, -42.10]).addTo(bean_rj),
+        L.marker([-23, -42.78]).addTo(bean_rj);
 
-    var data_stasiun = new L.LayerGroup();
-    <?php foreach ($data_stasiun as $key => $val) : ?>
-        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).addTo(data_stasiun);
-    <?php endforeach; ?>
+    // Rio de Janeiro Corn Plant
+    var corn_rj = new L.LayerGroup();
+    L.marker([-22, -43.20]).addTo(corn_rj),
+        L.marker([-23, -43.50]).addTo(corn_rj);
 
-    var data_terminal = new L.LayerGroup();
-    <?php foreach ($data_terminal as $key => $val) : ?>
-        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).addTo(data_terminal);
-    <?php endforeach; ?>
+    // Rio de Janeiro Rice Plant
+    var rice_rj = new L.LayerGroup();
+    L.marker([-22, -42.90]).addTo(rice_rj),
+        L.marker([-22, -42.67]).addTo(rice_rj),
+        L.marker([-23, -42.67]).addTo(rice_rj);
 
-    var speed_bump = new L.LayerGroup();
-    <?php foreach ($speed_bump as $key => $val) : ?>
-        L.marker([<?= $val['latitude'] ?>, <?= $val['longitude'] ?>]).addTo(speed_bump);
-    <?php endforeach; ?>
+    // Belo Horizonte Sugar Cane Plant
+    var sugar_bh = new L.LayerGroup();
+    L.marker([-19, -44.90]).addTo(sugar_bh),
+        L.marker([-19, -44.67]).addTo(sugar_bh);
+
+    // Belo Horizonte Corn Plant
+    var corn_bh = new L.LayerGroup();
+    L.marker([-19.45, -45.90]).addTo(corn_bh),
+        L.marker([-19.33, -45.67]).addTo(corn_bh);
+
 
     var map = L.map('map', {
-        center: [-7.617912873115704, 111.52210236294196],
-        zoom: 13
+        center: [-16, -54],
+        zoom: 4
     });
-
-    // <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40604.434930079675!2d111.49217071372861!3d-7.633906869886319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79be537c813a33%3A0xafe2f173545a53ae!2sMadiun%2C%20Kota%20Madiun%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1656778741606!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
     map.addLayer(bing2);
 
     var baseMaps = [{
-        groupName: "Google Base Maps",
-        expanded: true,
-        layers: {
-            "Google Earth": L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            // "OpenStreetMaps"    :   osm,
-            "Google Maps": L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            "Hybrid": L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
+            groupName: "Google Base Maps",
+            expanded: true,
+            layers: {
+                "Satellite": g_satellite,
+                "Road Map": g_roadmap,
+                "Terreno": g_terrain
+            }
+        }, {
+            groupName: "OSM Base Maps",
+            layers: {
+                "OpenStreetMaps": osm
+            }
         }
-    }, ];
+        /*, {
+                                    groupName : "Bing Base Maps",
+                                    layers    : {
+                                        "Satellite" : bing1,
+                                        "Road"      : bing2
+                                  }
+                                } */
+    ];
 
     var overlays = [{
-        groupName: "Fiter Data",
+        groupName: "Sao Paulo",
         expanded: true,
         layers: {
-            "Data CCTV": data_cctv,
-            "Data Halte": data_halte,
-            "Data Parkir": data_parkir,
-            "Data Stasiun": data_stasiun,
-            "Data Terminal": data_terminal,
-            "Speed Bump": speed_bump,
+            "Soybeans Plant": soybeans_sp,
+            "Corn Plant": corn_sp
+        }
+    }, {
+        groupName: "Rio de Janeiro",
+        expanded: true,
+        layers: {
+            "Bean Plant": bean_rj,
+            "Corn Plant": corn_rj,
+            "Rice Plant": rice_rj
+        }
+    }, {
+        groupName: "Belo Horizonte",
+        layers: {
+            "Sugar Cane Plant": sugar_bh
         }
     }];
 
     // configure StyledLayerControl options for the layer soybeans_sp
-    // soybeans_sp.StyledLayerControl = {
-    //     removable : true,
-    //     visible : false
-    // }
+    soybeans_sp.StyledLayerControl = {
+        removable: true,
+        visible: false
+    }
 
     // configure the visible attribute with true to corn_bh
-    // corn_bh.StyledLayerControl = {
-    //     removable : false,
-    //     visible : true
-    // }
+    corn_bh.StyledLayerControl = {
+        removable: false,
+        visible: true
+    }
 
     var options = {
         container_width: "300px",
         group_maxHeight: "80px",
-        container_maxHeight: "350px",
+        //container_maxHeight : "350px", 
         exclusive: false,
         collapsed: true,
         position: 'topright'
@@ -141,20 +159,22 @@
     });
 
     // test for adding new overlay layers dynamically
-    // control.addOverlay( corn_bh, "Corn Plant", {groupName : "Belo Horizonte"} ); 
+    control.addOverlay(corn_bh, "Corn Plant", {
+        groupName: "Belo Horizonte"
+    });
 
     //control.removeLayer( corn_sp );
 
     //control.removeGroup( "Rio de Janeiro");
 
-    // control.selectLayer(corn_sp); 
+    control.selectLayer(corn_sp);
     //control.unSelectLayer(corn_sp); 
 
-    // control.selectGroup("Rio de Janeiro");
+    control.selectGroup("Rio de Janeiro");
     //control.unSelectGroup("Rio de Janeiro");
 
-    // var popup = L.popup()
-    // .setLatLng([-16, -54])
-    // .setContent("The data that appears in this application are fictitious and do not represent actual data!")
-    // .openOn(map);
+    var popup = L.popup()
+        .setLatLng([-16, -54])
+        .setContent("The data that appears in this application are fictitious and do not represent actual data!")
+        .openOn(map);
 </script>

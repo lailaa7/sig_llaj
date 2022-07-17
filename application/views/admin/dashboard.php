@@ -1,8 +1,3 @@
-<!--**********************************
-            Content body start
-        ***********************************-->
-<div class="content-body">
-
     <div class="container-fluid mt-3">
         <div class="row">
             <div class="col-lg-3 col-sm-6">
@@ -10,7 +5,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">DATA CCTV</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white"><?= $data_cctv ?></h2>
+                            <!-- <h2 class="text-white"><?= $data_cctv ?></h2> -->
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-camera"></i></span>
                     </div>
@@ -21,7 +16,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Data Halte</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white"><?= $data_halte ?></h2>
+                            <!-- <h2 class="text-white"><?= $data_halte ?></h2> -->
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-bus"></i></span>
                     </div>
@@ -32,7 +27,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Data Parkir</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white"><?= $data_parkir ?></h2>
+                            <!-- <h2 class="text-white"><?= $data_parkir ?></h2> -->
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-parking"></i></span>
                     </div>
@@ -43,7 +38,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Data Stasiun</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white"><?= $data_stasiun ?></h2>
+                            <!-- <h2 class="text-white"><?= $data_stasiun ?></h2> -->
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-bus"></i></span>
                     </div>
@@ -54,7 +49,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Data Terminal</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white"><?= $data_terminal ?></h2>
+                            <!-- <h2 class="text-white"><?= $data_terminal ?></h2> -->
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-train"></i></span>
                     </div>
@@ -65,7 +60,7 @@
                     <div class="card-body">
                         <h3 class="card-title text-white">Speed Bump</h3>
                         <div class="d-inline-block">
-                            <h2 class="text-white"><?= $speed_bump ?></h2>
+                            <!-- <h2 class="text-white"><?= $speed_bump ?></h2> -->
                         </div>
                         <span class="float-right display-5 opacity-5"><i class="fa fa-bump"></i></span>
                     </div>
@@ -560,7 +555,6 @@
         </div> -->
     </div>
     <!-- #/ container -->
-</div>
-<!--**********************************
+    <!--**********************************
             Content body end
         ***********************************-->
