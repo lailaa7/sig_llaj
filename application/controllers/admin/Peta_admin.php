@@ -14,16 +14,31 @@ class Peta_admin extends CI_Controller
                 </div>');
             redirect('Auth/login');
         }
+        error_reporting(0);
     }
 
     public function index()
     {
         $data['data_lokasi'] 		= $this->Model_peta->tampil_peta()->result_array();
         $data['kategori'] = $this->Model_data->Tampil_kategori()->result();
+        
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');
         $this->load->view('admin/peta_admin', $data);
         $this->load->view('template_admin/footer');
+    }
+
+    public function get_kategori($id_kategori)
+    {
+        if($id_kategori == '0'){
+            $data['data_lokasi'] = $this->Model_peta->tampil_peta()->result_array();
+            
+            $this->load->view('admin/peta_admin_2', $data);
+        }else{
+            $data['data_lokasi'] = $this->db->get_where('data_llaj', ['id_kategori' => $id_kategori])->result_array();
+             
+            $this->load->view('admin/peta_admin_2', $data);
+        }
     }
     
     

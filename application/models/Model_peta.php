@@ -9,9 +9,11 @@ class Model_peta extends CI_Model
         return $this->db->get('data_cctv');
     }
 
-    function Tampil_peta()
+    function tampil_peta()
     {
-        $query = $this->db->get('peta');
-        return $query;
+        $this->db->select('*');
+        $this->db->from('data_llaj');
+        $this->db->join('kategori','kategori.id_kategori = data_llaj.id_kategori');
+        return $this->db->get(); 
     }
 }
