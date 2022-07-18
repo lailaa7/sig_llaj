@@ -1,3 +1,15 @@
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/geojson_madiun_kota.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/geojson_kecamatan_indonesia.js"></script>
+<script src="<?php echo base_url(); ?>assets/admin/js/maps/leaflet_search.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.css">
+<link rel="stylesheet" href="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.3/leaflet.js"></script>
+<script type="text/javascript" src="https://tiles.unwiredlabs.com/js/leaflet-unwired.js?v=1"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-hash/0.2.1/leaflet-hash.min.js"></script>
+<script src="https://maps.locationiq.com/v2/libs/leaflet-geocoder/1.9.6/leaflet-geocoder-locationiq.min.js"></script>
+
+
 <div class="container">
     <div class="row">
         <div class="col-lg-12 mt-3 mb-3 py-3">
@@ -6,122 +18,42 @@
                     <h4>PETA PERSEBARAN LLAJ KOTA MADIUN</h4>
                 </div>
                 <div class="card-body bg-light">
-                    <div id="map" style="height: 500px"></div>
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <h6>Kategori</h6>
+                        <select id="kategori" class="form-control ">
+                            <option selected="selected" value="0">Semua Kategori</option>
+                            <?php foreach ($kategori as $ktg) : ?>
+                                <option value="<?php echo $ktg->id_kategori ?>"><?php echo $ktg->nama_kategori ?></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                    <div id="letak-maps"></div>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<script>
-    // Google layers
-    var g_roadmap = new L.Google('ROADMAP');
-    var g_satellite = new L.Google('SATELLITE');
-    var g_terrain = new L.Google('TERRAIN');
 
-    // OSM layers
-    var osmUrl = 'http://{s}.tile.osm.org/{z}/{x}/{y}.png';
-    var osmAttrib = 'Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-    var osm = new L.TileLayer(osmUrl, {
-        attribution: osmAttrib
-    });
-
-    // Bing layers
-    var bing1 = new L.BingLayer("AvZ2Z8Jve41V_bnPTe2mw4Xi8YWTyj2eT87tSGSsezrYWiyaj0ldMaVdkyf8aik6", {
-        type: 'Aerial'
-    });
-    var bing2 = new L.BingLayer("AvZ2Z8Jve41V_bnPTe2mw4Xi8YWTyj2eT87tSGSsezrYWiyaj0ldMaVdkyf8aik6", {
-        type: 'Road'
-    });
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var kategori = $('#kategori').val();
+        $.ajax({
+            url: "<?=base_url('Peta/get_kategori/')?>"+kategori,
+            success: function (response) {
+                $('#letak-maps').html(response);
+            }
+        });
     
-
-    var map = L.map('map', {
-        center: [-7.617912873115704, 111.52210236294196],
-        zoom: 13
-    });
-
-    // <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d40604.434930079675!2d111.49217071372861!3d-7.633906869886319!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e79be537c813a33%3A0xafe2f173545a53ae!2sMadiun%2C%20Kota%20Madiun%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1656778741606!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-
-    map.addLayer(bing2);
-
-    var baseMaps = [{
-        groupName: "Google Base Maps",
-        expanded: true,
-        layers: {
-            "Google Earth": L.tileLayer('http://{s}.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            // "OpenStreetMaps"    :   osm,
-            "Google Maps": L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-            "Hybrid": L.tileLayer('http://{s}.google.com/vt/lyrs=s,h&x={x}&y={y}&z={z}', {
-                maxZoom: 20,
-                subdomains: ['mt0', 'mt1', 'mt2', 'mt3']
-            }),
-        }
-    }, ];
-
-    var overlays = [{
-        groupName: "Fiter Data",
-        expanded: true,
-        layers: {
-            "Data Lokasi": data_lokasi,
-        }
-    }];
-
-    // configure StyledLayerControl options for the layer soybeans_sp
-    // soybeans_sp.StyledLayerControl = {
-    //     removable : true,
-    //     visible : false
-    // }
-
-    // configure the visible attribute with true to corn_bh
-    // corn_bh.StyledLayerControl = {
-    //     removable : false,
-    //     visible : true
-    // }
-
-    var options = {
-        container_width: "300px",
-        group_maxHeight: "80px",
-        container_maxHeight: "350px",
-        exclusive: false,
-        collapsed: true,
-        position: 'topright'
-    };
-
-    var control = L.Control.styledLayerControl(baseMaps, overlays, options);
-    map.addControl(control);
-
-    // test for adding new base layers dynamically
-    // to create a new group simply add a layer with new group name
-    control.addBaseLayer(bing1, "Bing Satellite", {
-        groupName: "Bing Maps",
-        expanded: true
-    });
-    control.addBaseLayer(bing2, "Bing Road", {
-        groupName: "Bing Maps"
-    });
-
-    // test for adding new overlay layers dynamically
-    // control.addOverlay( corn_bh, "Corn Plant", {groupName : "Belo Horizonte"} ); 
-
-    //control.removeLayer( corn_sp );
-
-    //control.removeGroup( "Rio de Janeiro");
-
-    // control.selectLayer(corn_sp); 
-    //control.unSelectLayer(corn_sp); 
-
-    // control.selectGroup("Rio de Janeiro");
-    //control.unSelectGroup("Rio de Janeiro");
-
-    // var popup = L.popup()
-    // .setLatLng([-16, -54])
-    // .setContent("The data that appears in this application are fictitious and do not represent actual data!")
-    // .openOn(map);
+        $('#kategori').on('change', function(){
+            var kategori = $(this).val();
+            $.ajax({
+                url: "<?=base_url('Peta/get_kategori/')?>"+kategori,
+                success: function (response) {
+                    $('#letak-maps').html(response);
+                }
+            });
+        })
+    })
 </script>
