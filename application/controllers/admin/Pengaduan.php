@@ -36,12 +36,13 @@ class Pengaduan extends CI_Controller
         }
         $baru = $newstring + 1;
         $nourut = $this->formatNbr($baru);
-        $data['id'] = 'Pr' . $nourut;
+        $data['id'] = 'PR' . $nourut;
 
         $this->load->Model('Model_pengaduan');
         $data['detail'] = $this->Model_pengaduan->detail_data($id);
         $data['detail']->status_proses = $this->Model_pengaduan->get_status($data['detail']->no_tiket);
-        // echo json_encode($data['detail']);
+        // echo "<pre>";
+        // print_r($data);
         // exit;
         $this->load->view('template_admin/header');
         $this->load->view('template_admin/sidebar');

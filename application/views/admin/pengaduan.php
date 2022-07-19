@@ -42,7 +42,11 @@
 
                                             <?php echo anchor(
                                                 'admin/pengaduan/detail_pengaduan/' . $aduan['no_tiket'],
-                                                '<div class="btn btn-circle btn-info btn-small"><i class="fas fa-info"></i></div>'
+                                                '<div class="btn btn-circle btn-warning btn-small"><i class="fas fa-info"></i></div>'
+                                            ) ?>
+                                            <?php echo anchor(
+                                                'admin/proses_pengaduan/proses/' . $aduan['no_tiket'],
+                                                '<div class="btn btn-circle btn-info btn-small"><i class="fa-solid fa-comments"></i></div>'
                                             ) ?>
 
                                         </div>

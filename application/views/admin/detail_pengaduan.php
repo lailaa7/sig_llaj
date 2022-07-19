@@ -11,7 +11,7 @@
             <div class="card">
                 <div class="card-body">
                     <form method="POST" id="form_proses" action="<?php echo base_url('admin/pengaduan/konfirmasi'); ?>">
-                        <div class="form-group row">
+                        <div class="form-group row" hidden>
                             <label class="col-sm-3 col-form-label">ID Proses</label>
                             <div class="col-sm-9">
                                 <input type="text" name="id_proses" id="id_proses" class="form-control-plaintext" value="<?= $id ?>">
@@ -72,9 +72,18 @@
         </div>
     </div>
 </div>
-</div>
-</div>
-</div>
+<script>
+    function SubmitForm(id) {
+        console.log(id)
+        $('#type_proses').val(id)
+        document.getElementById("form_proses").submit();
+
+    }
+    // document.getElementById("form_proses").addEventListener("click", function(event) {
+    //     event.preventDefault();
+    //     console.log('tes');
+    // });
+</script>
 <?php
 $key['longitude']   = '111.52210236294196';
 $key['latitude']    = '-7.617912873115704';
@@ -150,23 +159,27 @@ $key['latitude']    = '-7.617912873115704';
     var latInput = document.querySelector("[name=latitude]");
     var lngInput = document.querySelector("[name=longitude]");
 
-    function onMapClicktambah(e) {
-        var lat = e.latlng.lat;
-        var lng = e.latlng.lng;
-        if (!mark) {
-            mark = L.marker(e.latlng).addTo(map);
-        } else {
-            mark.setLatLng(e.latlng);
-        }
-        console.log(e.latlng);
+    // function onMapClicktambah(e) {
+    //     var lat = e.latlng.lat;
+    //     var lng = e.latlng.lng;
+    //     if (!mark) {
+    //         mark = L.marker(e.latlng).addTo(map);
+    //     } else {
+    //         mark.setLatLng(e.latlng);
+    //     }
+    //     console.log(e.latlng);
 
-        latInput.value = lat;
-        lngInput.value = lng;
-    }
-    map.on('click', onMapClicktambah);
+    //     latInput.value = lat;
+    //     lngInput.value = lng;
+    // }
+    // map.on('click', onMapClicktambah);
 
     // Adding a script block to post message to the parent container (think iframed demos)
     window.addEventListener('hashchange', function() {
         parent.postMessage(window.location.hash, '*')
     });
+
+    L.marker(
+        [<?= $detail->latitude ?>, <?= $detail->longitude ?>]
+    ).addTo(map);
 </script>

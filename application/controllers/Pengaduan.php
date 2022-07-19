@@ -145,13 +145,34 @@ class Pengaduan extends CI_Controller
             redirect('no_tiket');
         }
     }
+    public function proses()
+    {
+        $pengaduan = $this->db->get_where('proses_pengaduan', array('no_tiket' => $this->input->post('no_tiket')));
+        if ($pengaduan->num_rows() > 0) {
+            redirect(base_url('Pengaduan/Detail/'.$this->input->post('no_tiket')));
+        } else{
+            redirect(base_url('Pengaduan/DetailPengaduan'));
+        }
+    }
     public function DetailPengaduan()
     {
-        # code...
-        $data['pengaduan'] = $this->db->get_where('proses_pengaduan', array('no_tiket' => $this->input->post('no_tiket')))->row();
+
         $this->load->view('template/header');
         $this->load->view('template/navbar');
-        $this->load->view('lacak', $data);
+        $this->load->view('lacak');
+        $this->load->view('template/footer');
+    }
+
+    public function Detail($id)
+    {
+        $this->load->model('Model_pengaduan');
+        $data['detail'] = $this->Model_pengaduan->join_detail($id)->row();
+        $data['timeline'] = $this->Model_pengaduan->timeline($id)->result_array();
+        // var_dump($data);
+        // die;
+        $this->load->view('template/header');
+        $this->load->view('template/navbar');
+        $this->load->view('detail_pengaduan', $data);
         $this->load->view('template/footer');
     }
 }

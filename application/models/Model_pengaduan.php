@@ -21,6 +21,27 @@ class Model_pengaduan extends CI_Model
         return $query;
     }
 
+    public function join_detail($id)
+    {
+        $this->db->select('*');
+        $this->db->from('proses_pengaduan');
+        $this->db->join('pengaduan', 'pengaduan.no_tiket=proses_pengaduan.no_tiket', 'left');
+        $this->db->join('users', 'users.id_user=proses_pengaduan.id_user', 'left');
+        $this->db->where('proses_pengaduan.no_tiket', $id);
+
+        return $this->db->get();
+    }
+
+    public function timeline($id)
+    {
+        $this->db->select('*');
+        $this->db->from('proses_pengaduan');
+        $this->db->join('users', 'users.id_user=proses_pengaduan.id_user', 'left');
+        $this->db->where('proses_pengaduan.no_tiket', $id);
+
+        return $this->db->get();
+    }
+
     public function get_status($id = NULL)
     {
         $query = $this->db->get_where('proses_pengaduan', array('no_tiket' => $id))->row();

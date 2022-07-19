@@ -10,10 +10,8 @@
                         <tr>
                             <th>No Tiket</th>
                             <th>Nama Pengirim</th>
-                            <th>Lokasi</th>
-                            <th>Deskripsi Pengaduan</th>
-                            <th>Status</th>
-                            <th>Aksi</th>
+                            <th>Tanggapan</th>
+                            <!-- <th>Aksi</th> -->
                         </tr>
                     </thead>
                     <tbody>
@@ -21,9 +19,8 @@
                             <tr>
                                 <td><?php echo $pro['no_tiket']; ?> </td>
                                 <td><?php echo $pro['nama_pengirim']; ?> </td>
-                                <td><?php echo $pro['lokasi']; ?> </td>
-                                <td><?php echo $pro['isi']; ?> </td>
-                                <td>
+                                <td><?php echo $pro['keterangan']; ?> </td>
+                                <!-- <td>
 
                                     <?php
                                     if ($pro['status_proses'] == 1) {
@@ -37,14 +34,21 @@
                                     }
 
                                     ?>
-                                </td>
+                                </td> -->
                                 <td>
                                     <div>
-
+                                        <!-- <?php echo anchor(
+                                                    'admin/proses_pengaduan/proses/' . $pro['no_tiket'],
+                                                    '<div class="btn btn-circle btn-info btn-small"><i class="fa-solid fa-comments"></i></div>'
+                                                ) ?>
                                         <?php echo anchor(
-                                            'admin/proses_pengaduan/proses/' . $pro['no_tiket'],
-                                            '<div class="btn btn-circle btn-success btn-small"><i class="fa-solid fa-comments"></i></div>'
+                                            'admin/proses_pengaduan/selesai/' . $pro['no_tiket'],
+                                            '<div class="btn btn-circle btn-success btn-small"><i class="fa-solid fa-circle-check"></i></div>'
                                         ) ?>
+                                        <?php echo anchor(
+                                            'admin/proses_pengaduan/detail_proses/' . $pro['no_tiket'],
+                                            '<div class="btn btn-circle btn-warning btn-small"><i class="fa-solid fa-info"></i></div>'
+                                        ) ?> -->
                                     </div>
                                 </td>
                             </tr>
