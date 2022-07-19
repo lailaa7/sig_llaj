@@ -49,6 +49,10 @@
                                                             ?>" class="btn btn-circle btn-danger btn-small btn-hps">
                                                     <i class="fa-solid fa-trash"></i>
                                                 </a>
+                                                <a href="<?php echo base_url('admin/Data_llaj/Detail/' . $dt->id_data,)
+                                                            ?>" class="btn btn-circle btn-info btn-small">
+                                                    <i class="fa fa-eye"></i>
+                                                </a>
                                             </td>
                                         </tr>
                                     <?php endforeach; ?>

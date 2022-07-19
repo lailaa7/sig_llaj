@@ -1,5 +1,6 @@
 <?php
 
+use phpDocumentor\Reflection\Types\This;
 
 class Model_data extends CI_Model
 {
@@ -57,7 +58,15 @@ class Model_data extends CI_Model
 
     public function Detail_data($id = NULL)
     {
-        $query = $this->db->get_where('data_cctv', array('id_cctv' => $id))->row();
+        $query = $this->db->get_where('data_llaj', array('id_data' => $id))->row();
         return $query;
+    }
+    public function get_kategori($where)
+    {
+        $this->db->select('*');
+        $this->db->from('data_llaj');
+        $this->db->join('kategori', 'Kategori.id_kategori = data_llaj.id_kategori');
+        $this->db->where($where);
+        return $this->db->get();
     }
 }

@@ -48,7 +48,10 @@
                                                 'admin/proses_pengaduan/proses/' . $aduan['no_tiket'],
                                                 '<div class="btn btn-circle btn-info btn-small"><i class="fa-solid fa-comments"></i></div>'
                                             ) ?>
-
+                                            <?php echo anchor(
+                                                'admin/proses_pengaduan/selesai/' . $aduan['no_tiket'],
+                                                '<div class="btn btn-circle btn-success btn-small btn-sls"><i class="fa-solid fa-check"></i></div>'
+                                            ) ?>
                                         </div>
                                     </td>
                                 </tr>

@@ -28,8 +28,8 @@
                         <td><?php echo $detail->nama_jalan ?> </td>
                     </tr>
                     <tr>
-                        <th>Jumlah</th>
-                        <td><?php echo $detail->jumlah ?> </td>
+                        <th>Lokasi</th>
+                        <td><?php echo $detail->lokasi ?> </td>
                     </tr>
                     <tr>
                         <th>Longitude</th>

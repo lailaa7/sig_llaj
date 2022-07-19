@@ -90,4 +90,28 @@ class Data_llaj extends CI_Controller
         $this->session->set_flashdata('flashdata', 'Menghapus');
         redirect('admin/Data_llaj');
     }
+
+    public function Detail($id)
+    {
+        $where = array(
+            'id_data' => $id
+        );
+
+        $kategori = $this->Model_data->get_kategori($where)->row();
+        if ($kategori->nama_kategori == 'CCTV') {
+            $this->load->model('Model_data');
+            $data['detail'] = $this->Model_data->detail_data($id);
+            $this->load->view('template_admin/header');
+            $this->load->view('template_admin/sidebar');
+            $this->load->view('admin/detail_cctv', $data);
+            $this->load->view('template_admin/footer');
+        } else {
+            $this->load->model('Model_data');
+            $data['detail'] = $this->Model_data->detail_data($id);
+            $this->load->view('template_admin/header');
+            $this->load->view('template_admin/sidebar');
+            $this->load->view('admin/detail_data', $data);
+            $this->load->view('template_admin/footer');
+        }
+    }
 }

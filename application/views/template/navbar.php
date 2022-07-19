@@ -19,15 +19,8 @@
                         <a class="nav-link text-light" href="<?php echo base_url('peta') ?>">Peta LLAJ</a>
                     </li>
 
-                    <li class="nav-item dropdown">
-                        <a class="nav-link text-light dropdown-toggle" href="#" id="dropdown02" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data LLAJ <i class="icofont-thin-down"></i></a>
-                        <ul class="dropdown-menu" aria-labelledby="dropdown02">
-                            <li><a class="dropdown-item" href="<?php echo base_url('data_cctv') ?>">Data CCTV</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('data_halte') ?>">Data Halte</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('data_parkir') ?>">Data Parkir Khusus</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('data_terminal') ?>">Data Terminal</a></li>
-                            <li><a class="dropdown-item" href="<?php echo base_url('data_stasiun') ?>">Data Stasiun</a></li>
-                        </ul>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="<?php echo base_url('Dashboard/Data_llaj') ?>">Data LLAJ</a>
                     </li>
 
                     <li class="nav-item">

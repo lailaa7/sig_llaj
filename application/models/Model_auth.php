@@ -24,4 +24,14 @@
                 return false;
             }
         }
+        public function cek($where, $tabel)
+        {
+            return $this->db->get_where($tabel, $where);
+        }
+        public function Update_data($where, $data, $table)
+        {
+            $this->db->where($where);
+            return $this->db->update($table, $data);
+        }
     }
+    ?>

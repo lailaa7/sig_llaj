@@ -21,22 +21,16 @@
                             <div class="auth-form">
                                 <h4 class="text-center text-color mb-4"><strong>Lupa Password</strong></h4>
                                 <?= $this->session->flashdata('pesan'); ?>
-                                <form action="<?php echo base_url() . 'auth/proses_login' ?>" method="POST">
+                                <form action="<?php echo base_url() . 'auth/kirim_email' ?>" method="POST">
                                     <div class="form-group">
-                                        <input type="text" name="username" class="form-control" placeholder="Username">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" class="form-control" placeholder="Password">
-                                    </div>
-                                    <div class="form-group">
-                                        <input type="password" name="password" class="form-control" placeholder="Konfirmasi  Password">
+                                        <input type="email" name="email" class="form-control" placeholder="Email">
                                     </div>
                                     <div class="text-center">
-                                        <button name="login" class="btn login-form__btn submit w-100">Simpan</button>
+                                        <button name="login" class="btn login-form__btn submit w-100">KIRIM</button>
                                     </div>
                                     <div class="text-color text-center  mt-2">
-                                        <a href="<?php echo base_url('Auth/forget') ?>">
-                                            <h6>Lupa Password?</h6>
+                                        <a href="<?php echo base_url('Auth/login') ?>">
+                                            <h6>Masuk</h6>
                                         </a>
                                     </div>
                                 </form>

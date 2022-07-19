@@ -17,49 +17,42 @@
                     <h4>PETA PERSEBARAN LLAJ KOTA MADIUN</h4>
                 </div>
                 <div class="card-body bg-light">
-                    <div class="card-body">
-                        <div class="basic-form mb-3">
-                            <form action="" method="POST">
-                                <div class="form-row">
-                                    <div class="col-3">
-                                        <label class="col-form-label">Kategori</label>
-                                        <select id="kategori" class="form-control input-rounded">
-                                            <option selected="selected" value="0">Semua Kategori</option>
-                                            <?php foreach ($kategori as $ktg) : ?>
-                                                <option value="<?php echo $ktg->id_kategori ?>"><?php echo $ktg->nama_kategori ?></option>
-                                            <?php endforeach; ?>
-                                        </select>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-
-                        <div id="letak-maps"></div>
-
+                    <div class="col-lg-3 col-md-4 col-sm-6 mb-3">
+                        <h6>Kategori</h6>
+                        <select id="kategori" class="form-control ">
+                            <option selected="selected" value="0">Semua Kategori</option>
+                            <?php foreach ($kategori as $ktg) : ?>
+                                <option value="<?php echo $ktg->id_kategori ?>"><?php echo $ktg->nama_kategori ?></option>
+                            <?php endforeach; ?>
+                        </select>
                     </div>
+                    <div id="letak-maps"></div>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var kategori = $('#kategori').val();
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var kategori = $('#kategori').val();
+        $.ajax({
+            url: "<?=base_url('Peta/get_kategori/')?>"+kategori,
+            success: function (response) {
+                $('#letak-maps').html(response);
+            }
+        });
+    
+        $('#kategori').on('change', function(){
+            var kategori = $(this).val();
             $.ajax({
-                url: "<?= base_url('Peta/get_kategori/') ?>" + kategori,
-                success: function(response) {
+                url: "<?=base_url('Peta/get_kategori/')?>"+kategori,
+                success: function (response) {
                     $('#letak-maps').html(response);
                 }
             });
-
-            $('#kategori').on('change', function() {
-                var kategori = $(this).val();
-                $.ajax({
-                    url: "<?= base_url('Peta/get_kategori/') ?>" + kategori,
-                    success: function(response) {
-                        $('#letak-maps').html(response);
-                    }
-                });
-            })
         })
-    </script>
+    })
+</script>

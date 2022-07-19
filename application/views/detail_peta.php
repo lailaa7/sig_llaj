@@ -66,7 +66,7 @@
             </div>
         </div>
     </div>
-    <div class="card mb-4 mt-4  text-dark">
+    <!-- <div class="card mb-4 mt-4  text-dark">
         <div class=" mb-3 mt-5 px-3 py-2">
             <form action="<?= base_url('pengaduan/DetailPengaduan') ?>" method="POST" enctype="multipart/form-data">
                 <div class="row">
@@ -82,7 +82,7 @@
                 </div>
             </form>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <?php

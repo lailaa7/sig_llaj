@@ -1,15 +1,21 @@
 <?php
+ob_start();
 
 class Peta extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        error_reporting(0);
+    }
 
     public function index()
     {
-        $data['data_lokasi']         = $this->Model_peta->tampil_peta()->result_array();
         $data['kategori'] = $this->Model_data->Tampil_kategori()->result();
+        $data['data_lokasi'] = $this->Model_peta->tampil_peta()->result_array();
         $this->load->view('template_map/header');
         $this->load->view('template_map/navbar');
-        $this->load->view('peta2', $data);
+        $this->load->view('peta', $data);
         $this->load->view('template_map/footer');
     }
 
@@ -17,22 +23,14 @@ class Peta extends CI_Controller
     {
         if ($id_kategori == '0') {
             $data['data_lokasi'] = $this->Model_peta->tampil_peta()->result_array();
+            // echo json_encode($data['data_lokasi']);$this->load->view('template_map/navbar');
+            $this->load->view('peta2', $data);
 
-            $this->load->view('peta', $data);
+            $this->load->view('template_map/footer');
         } else {
             $data['data_lokasi'] = $this->db->get_where('data_llaj', ['id_kategori' => $id_kategori])->result_array();
-
-            $this->load->view('peta', $data);
+            // echo json_encode($data['data_lokasi']); 
+            $this->load->view('peta2', $data);
         }
-    }
-    
-    public function Detail($id)
-    {
-        $this->load->model('Model_peta');
-        $data['detail'] = $this->Model_peta->detail_data($id);
-        $this->load->view('template_map/header');
-        $this->load->view('template_map/navbar');
-        $this->load->view('detail_peta', $data);
-        $this->load->view('template_map/footer');
     }
 }
